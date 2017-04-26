@@ -1,0 +1,48 @@
+
+<!-- Now Playing -->
+
+<section class="now-playing">
+
+	{% include 'demo/line-item-empty.twig' %}
+
+
+	{% include 'demo/line-item-voice.twig' with
+        {
+        	'class' : 'incoming-call voice',
+        	'siri_id' : 'siri-0',
+            'contact_name' : 'Anne Wright',
+            'company_name' : 'Lehman Marcus'
+        }
+	%}
+
+	{% include 'demo/line-item-voice.twig' with
+        {
+        	'class' : 'outgoing-call',
+        	'siri_id' : 'siri-1',
+            'contact_name' : 'Anne Wright',
+            'company_name' : 'Lehman Marcus',
+            'is_outgoingActive' : true
+        }
+	%}
+
+	{% include 'demo/line-item-voice.twig' with
+        {
+        	'class' : 'no-answer',
+        	'siri_id' : 'siri-2',
+            'contact_name' : 'Anne Wright',
+            'company_name' : 'Lehman Marcus',
+            'is_outgoingFailed' : true
+        }
+	%}
+
+	{% include 'demo/line-item-voice.twig' with
+        {
+        	'class' : 'phone-call voice',
+        	'siri_id' : 'siri-3',
+            'contact_name' : 'Harmon Whitney',
+            'company_name' : '212-123-4567 • Wayne Enterprises',
+            'is_outgoingActive' : true
+        }
+	%}
+
+</section>

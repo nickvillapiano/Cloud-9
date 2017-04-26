@@ -1,0 +1,198 @@
+<!-- Chat Area -->
+
+<section class="chat-area one-tab-state">
+
+    <div class="tab-bar">
+        <div class="tab-container">
+            {% include 'demo/chat-tab.twig' with
+                {
+                    'class' : 'active',
+                    'tab_name' : 'Anne Wright'
+                }
+            %}
+            {% include 'demo/chat-tab.twig' with
+                {
+                    'class' : '',
+                    'tab_name' : 'R & D'
+                }
+            %}
+            {% include 'demo/chat-tab.twig' with
+                {
+                    'class' : '',
+                    'tab_name' : 'Jan Watts'
+                }
+            %}
+            {% include 'demo/chat-tab.twig' with
+                {
+                    'class' : 'shrink',
+                    'tab_name' : 'Sarah la Ponte'
+                }
+            %}
+            {% include 'demo/chat-tab.twig' with
+                {
+                    'class' : 'shrink',
+                    'tab_name' : 'Hugh Levine'
+                }
+            %}
+            {% include 'demo/chat-tab.twig' with
+                {
+                    'class' : 'control',
+                    'tab_name' : '+5'
+                }
+            %}
+        </div>
+        <div class="tab-controls">
+            <div class="close-control">
+                {# <img src="images/close.svg" alt="Close icon"> #}
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 148 146" style="enable-background:new 0 0 148 146;" xml:space="preserve">
+                    <line class="st0" x1="19" y1="18.7" x2="128.1" y2="127.8"/>
+                    <line class="st0" x1="128.1" y1="18.7" x2="19" y2="127.8"/>
+                </svg>
+            </div>
+            <div class="tab-manager">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 39.2 39.7" style="enable-background:new 0 0 39.2 39.7;" xml:space="preserve">
+                    <style>
+                        .st0 {
+                            fill: #fff;
+                        }
+                    </style>
+                    <rect x="0.7" y="0.9" class="st0" width="16.3" height="16.3"/>
+                    <rect x="22" y="0.9" class="st0" width="16.3" height="16.3"/>
+                    <rect x="0.7" y="22.2" class="st0" width="16.3" height="16.3"/>
+                    <rect x="22" y="22.2" class="st0" width="16.3" height="16.3"/>
+                </svg>
+            </div>
+        </div>
+        <div class="tab-dropdown">
+            {% include 'demo/tab-dropdown-single.twig' with
+                {
+                    'name' : 'Regina Wills'
+                }
+            %}
+            {% include 'demo/tab-dropdown-single.twig' with
+                {
+                    'name' : 'Javier Gardenia'
+                }
+            %}
+            {% include 'demo/tab-dropdown-single.twig' with
+                {
+                    'class' : 'active',
+                    'name' : 'Keith Rural (3)'
+                }
+            %}
+            {% include 'demo/tab-dropdown-single.twig' with
+                {
+                    'name' : 'Joe Potts'
+                }
+            %}
+            {% include 'demo/tab-dropdown-single.twig' with
+                {
+                    'name' : 'Karen Ferdinand'
+                }
+            %}
+        </div>
+    </div>
+
+    <div class="voice-bar">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85.6 88.4" style="enable-background:new 0 0 85.6 88.4;" xml:space="preserve">
+            <style type="text/css">
+                .st0 {
+                    /*stroke-width: 0.9904;*/
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 10;
+                }
+                .st1 {
+                    stroke-miterlimit: 10;
+                }
+            </style>
+            <polygon class="st1" points="83.5,20.3 76.4,20.3 80.2,1.5 61.6,22.8 70.7,22.8 65,41.7 "/>
+            <path class="st0" d="M9.3,9.1c-7.1,7.2-7.5,16.3-7.5,16.3c1.8,8.8,11.7,25,23.7,37c12,12,28.2,21.9,37,23.7c0,0,9.1-0.4,16.3-7.5
+            l0,0l4.2-4.2c0.6-0.6,0.6-1.5,0-2.1l-18-18c-0.6-0.6-1.5-0.6-2,0l-4.2,4.2l0,0l-4,4.9c0,0-7.6-1.6-18.2-12.3
+            C26,40.7,24.3,33.2,24.3,33.2l5-4l0,0l0.1-0.1h0l0,0l4.1-4.1c0.6-0.6,0.6-1.5,0-2l-18-18c-0.6-0.6-1.5-0.6-2,0L9.3,9.1L9.3,9.1z"/>
+        </svg>
+    </div>
+
+    <div class="conversation-area">
+        {% include 'demo/conversation-line-item.twig' with
+            {
+                'class' : 'you',
+                'first_name' : 'Anne',
+                'timestamp' : '3:34 PM',
+                'message' : "Let me know when you've booked your flight. It looks like either noon or 6 AM.<br>Preference?"
+            }
+        %}
+        {% include 'demo/conversation-line-item.twig' with
+            {
+                'class' : 'me',
+                'first_name' : 'Jake',
+                'timestamp' : '3:54 PM',
+                'message' : "Earlier I guess<br>Booking now."
+            }
+        %}
+        {% include 'demo/conversation-line-item.twig' with
+            {
+                'class' : 'you',
+                'first_name' : 'Anne',
+                'timestamp' : '4:00 PM',
+                'message' : "Works for me. see you at the airport. I’ll probably get there around 5:15"
+            }
+        %}
+        <div class="dateline">
+            <div class="hr"></div>
+            <div class="day">
+                Today
+            </div>
+        </div>
+        {% include 'demo/conversation-line-item.twig' with
+            {
+                'class' : 'me',
+                'first_name' : 'Jake',
+                'timestamp' : '11:52 AM',
+                'message' : "That went better than expected..."
+            }
+        %}
+    </div>
+
+    <div class="input-area">
+        <input id="chat-input" type="text" name="search" value="" {# placeholder="search" #}>
+        <div class="bizmoji-trigger">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.2 56.6" style="enable-background:new 0 0 56.2 56.6;" xml:space="preserve">
+                <style type="text/css">
+                    .st0 {
+                        fill: none;
+                        stroke: #231F20;
+                        stroke-width: 4;
+                        stroke-linecap: round;
+                        stroke-miterlimit: 10;
+                    }
+                    .st1 {
+                        fill: #231F20;
+                    }
+                </style>
+                <circle class="st0" cx="28.1" cy="28.6" r="25"/>
+                <path class="st0" d="M39,36.4c-2.2,3.8-6.3,6.3-10.9,6.3c-4.7,0-8.7-2.5-10.9-6.3"/>
+                <g>
+                    <circle class="st1" cx="18.5" cy="22.5" r="2.9"/>
+                    <circle class="st1" cx="37.6" cy="22.5" r="2.9"/>
+                </g>
+            </svg>
+        </div>
+        <div class="bizmoji-window">
+            <img src="images/bizmoji-window.png" alt="Bizmoji Window - FPO">
+        </div>
+        <div class="quick-reply-trigger">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85.6 88.4" style="enable-background:new 0 0 85.6 88.4;" xml:space="preserve">
+                <polygon class="st1" points="83.5,20.3 76.4,20.3 80.2,1.5 61.6,22.8 70.7,22.8 65,41.7 "/>
+                <path class="st0" d="M9.3,9.1c-7.1,7.2-7.5,16.3-7.5,16.3c1.8,8.8,11.7,25,23.7,37c12,12,28.2,21.9,37,23.7c0,0,9.1-0.4,16.3-7.5
+                l0,0l4.2-4.2c0.6-0.6,0.6-1.5,0-2.1l-18-18c-0.6-0.6-1.5-0.6-2,0l-4.2,4.2l0,0l-4,4.9c0,0-7.6-1.6-18.2-12.3
+                C26,40.7,24.3,33.2,24.3,33.2l5-4l0,0l0.1-0.1h0l0,0l4.1-4.1c0.6-0.6,0.6-1.5,0-2l-18-18c-0.6-0.6-1.5-0.6-2,0L9.3,9.1L9.3,9.1z"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="chat-window-fpo">
+        <img src="images/chat-window.png" alt="Chat Window FPO">
+    </div>
+
+</section>

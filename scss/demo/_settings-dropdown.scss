@@ -1,0 +1,76 @@
+// _settings-dropdown.scss
+
+.settings-dropdown {
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    background: $active-grey-1;
+    text-transform: uppercase;
+    z-index: 6;
+    padding: 0.5rem;
+    // transform: translateY(-100%) translateY(-3.5rem);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    //
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s, opacity 0.3s;
+
+    .line-item {
+        overflow: auto;
+        padding: 0.8rem 0.5rem;
+
+        .title {
+            float: left;
+            @include apercu-bold;
+            font-size: 1.2rem;
+            margin: 0.3rem 0 0 0;
+        }
+
+        .key-command {
+            float: right;
+            font-size: 1rem;
+            margin: 0 0 0 2rem;
+
+            span {
+                display: inline-block;
+                margin: 0 0.1rem;
+
+                &.key-style {
+                    margin: 0;
+                    border: 0.1rem solid $white;
+                    padding: 0.3rem 0.5rem;
+                }
+            }
+        }
+
+        &:hover {
+            background: $select-green;
+            color: $black;
+            cursor: pointer;
+
+            .key-command {
+
+                span {
+
+                    &.key-style {
+                        border: 0.1rem solid $black;
+                    }
+                }
+            }
+        }
+    }
+
+    .separator {
+        margin: 0.5rem 0;
+        width: 100%;
+        height: 0.1rem;
+        background: $black;
+    }
+
+    &.expand {
+        // transform: translateY(0);
+        opacity: 1;
+        height: 12.6rem;
+    }
+}

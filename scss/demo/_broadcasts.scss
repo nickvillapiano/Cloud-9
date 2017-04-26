@@ -1,0 +1,232 @@
+// _broadcasts.scss
+
+.broadcasts {
+  text-transform: uppercase;
+  color: $white;
+  background: $almost-black;
+  height: 3.1rem;
+  overflow: hidden;
+  transition: height 0.3s;
+  //
+  // height: 12rem;
+  // margin-top: -10rem;
+  // background: transparent;
+  // z-index: 2;
+  //
+  height: 11.1rem;
+  z-index: 2;
+  transform: translateY(71%);
+  transition: all 0.3s;
+  margin-top: -8.8rem;
+  //
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  //
+  margin: 0;
+  transform: translateY(18.1rem);
+
+  .now-playing-big {
+    height: 0rem;
+    transition: height 0.45s;
+    transition-delay: 0.1s;
+    overflow: hidden;
+    position: relative;
+
+    &.expand {
+      height: 10.1rem;
+    }
+
+    .minimize-control {
+      width: 2rem;
+      height: 2rem;
+      background: transparent;
+      position: absolute;
+      top: 3.1rem;
+      right: 0.9rem;
+      z-index: 6;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header {
+    width: 100%;
+    overflow: auto;
+    //
+    position: relative;
+    z-index: 5;
+    background: $almost-black;
+    height: 3.1rem;
+    border-top: 0.1rem solid $grey;
+    //
+    overflow: initial;
+    transition: background 0.3s;
+
+    .play-pause {
+      width: 1rem;
+      position: relative;
+      top: 1rem;
+      left: 1.5rem;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -1;
+
+        &.show {
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+    }
+
+    .now-playing-small {
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.3s ease-out, z-index 0.3s ease-out, transform 15s linear;
+      max-width: initial;
+      width: 300%;
+    }
+
+    .title {
+      // float: left;
+      font-size: 1.2rem;
+      @include apercu-bold;
+      margin: 0.9rem 1rem 0;
+      //
+      // position: relative;
+      // top: 50%;
+      // left: 50%;
+      // transform: translateX(-50%) translateY(-50%);
+      margin: 0;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.3s;
+
+        &.show {
+          opacity: 1;
+          z-index: 1;
+        }
+
+        &.multiple-playing {
+          font-style: italic;
+        }
+      }
+
+      .count {
+        font-size: 1rem;
+        color: $dark-beige;
+      }
+    }
+
+    .more-toggle {
+      float: right;
+      color: $dark-beige;
+      margin: 0.9rem 1.5rem 0;
+      transition: transform 0.5s;
+      transition-delay: 0.1s;
+      transform: rotateX(180deg);
+
+      // &:after {
+      //   content: "+";
+      //   font-size: 1.2rem;
+      //   margin: 0 0 0 0.5rem;
+      // }
+
+      svg {
+        width: 1rem;
+
+        .st0 {
+          stroke: $white;
+          fill: $white;
+          transition: all 0.3s;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        svg {
+
+          .st0 {
+            stroke: $select-green;
+            fill: $select-green;
+          }
+        }
+      }
+
+      &.active {
+        transform: rotateX(0);
+      }
+
+      &.move-up {
+        transform: rotateX(0) translateY(-7.6rem);
+      }
+    }
+
+    &.active {
+      background: $dark-purple;
+
+      .now-playing-small {
+        opacity: 1;
+        z-index: 0;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .channels {
+    width: 100%;
+    padding: 1rem;
+    overflow: auto;
+    background: $almost-black;
+    //
+    padding: 1rem 1rem 2.5rem;
+    height: 23rem;
+    overflow-y: scroll;
+
+    @import 'broadcast-channel';
+
+    .section-title {
+      color: $dark-beige;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: 2rem 0 1rem 0;
+      float: left;
+      clear: left;
+
+      &.first {
+        margin-top: 0;
+      }
+
+      & + .channel {
+        clear: left;
+      }
+    }
+  }
+
+  &.expand {
+    transform: translateY(-5rem);
+  }
+
+  &.expand-mini {
+    transform: translateY(-5rem);
+    z-index: 5;
+    height: 15.1rem;
+  }
+}
+

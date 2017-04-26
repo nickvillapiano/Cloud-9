@@ -1,0 +1,428 @@
+// _command-line.scss
+
+.command-line {
+	border-top: 0.1rem solid $grey;
+	// padding: 1.5rem 0;
+	//
+	z-index: 10;
+	background: $black;
+	//
+	background: $standard-gradient;
+	height: 4.8rem;
+
+	.input-wrapper {
+		background: $standard-gradient;
+		overflow: auto;
+		height: 4.8rem;
+		width: calc(100% - 13.2rem);
+	    position: relative;
+   		z-index: 2;
+   		float: left;
+   		//
+   		transition: width 0.2s;
+
+		input {
+			position: relative;
+			border: none;
+			width: 100%;
+			float: left;
+			outline: none;
+			color: $white;
+			font-size: 15px;
+			background: $black;
+			padding: 1.5rem 0 1.5rem 2.4rem;
+			z-index: 3;
+			//
+			padding: 0.6rem 0 0.6rem 1.8rem;
+			border: 0.1rem solid $medium-grey;
+			top: 0.8rem;
+			//
+			border: 0.1rem solid $active-grey-1;
+			transition: border 0.3s;
+
+			&.expand-call {
+				padding-left: 6.9rem;
+			}
+
+			&.expand-add-contact {
+				padding-left: 12.1rem;
+				padding-right: 2.6rem;
+			}
+
+			&:focus {
+				border: 0.1rem solid $medium-grey;
+
+				+ .caret {
+					color: $white;
+				}
+			}
+		}
+
+		.dialpad-control {
+			position: absolute;
+			right: 0.7rem;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 3;
+
+			svg {
+				width: 1.5rem;
+				margin: 0.2rem 0 0 0;
+
+				.st0 {
+					stroke-width: 2;
+					fill: $normal-grey-2;;
+					stroke: $normal-grey-2;;
+					transition: all 0.3s;
+				}
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				svg {
+
+					.st0 {
+						fill: $select-green;
+						stroke: $select-green;
+					}
+				}
+			}
+		}
+	}
+
+	.awesome-button {
+		float: left;
+	    z-index: 3;
+	    position: relative;
+	    //
+	    padding: 1.1rem 0.8rem;
+	    background: $standard-gradient;
+
+	    svg {
+	    	position: relative;
+	    	width: 2.6rem;
+	    	transition: transform 0.3s;
+
+	    	.st0 {
+	            fill: none;
+	            stroke: $white;
+	            stroke-width: 2;
+	            stroke-miterlimit: 10;
+	    	}
+
+	    	.st1 {
+	            fill: none;
+	            stroke: $white;
+	            stroke-width: 4;
+	            stroke-miterlimit: 10;
+	    	}
+	    }
+
+	    &:hover {
+	    	cursor: pointer;
+
+	    	svg {
+
+	    		.st0 {
+	    			stroke: $select-green;
+	    		}
+
+	    		.st1 {
+	    			stroke: $select-green;
+	    		}
+	    	}
+	    }
+
+	    &.active {
+
+	    	svg {
+	    		transform: rotate(45deg);
+
+	    		.st0 {
+	    			stroke: $select-green;
+	    		}
+
+	    		.st1 {
+	    			stroke: $select-green;
+	    		}
+	    	}
+	    }
+	}
+
+	.caret {
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    left: 1rem;
+	    font-size: 1.6rem;
+	    color: $dark-beige;
+	    transition: all 0.3s;
+	    z-index: 3;
+	    //
+	    left: 5rem;
+
+	}
+
+	.panel1 {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		transition: all 0.3s;
+		transform: translateY(100%);
+		z-index: 1;
+
+		&.expand {
+			transform: translateY(-4.7rem);
+		}
+	}
+
+	.panel2 {
+		@extend .panel1;
+		z-index: 2;
+	}
+
+	.panel3 {
+		@extend .panel1;
+		z-index: 3;
+	}
+
+	.search-controls {
+		width: 21rem;
+	    position: absolute;
+	    z-index: 3;
+	    right: 1rem;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    opacity: 0;
+	    transition: all 0.3s;
+	    //
+	    right: 6rem;
+	    //
+	    z-index: -1;
+
+	    &.show {
+	    	// z-index: 3;
+	    	// opacity: 1;
+	    }
+	}
+
+	.views-controls {
+		width: 9rem;
+		float: left;
+		text-align: center;
+		overflow: auto;
+		padding: 0 0 0 1rem;
+		position: relative;
+		z-index: 2;
+		background: $standard-gradient;
+		//
+		transition: width 0.2s;
+
+		.contact-list-control {
+			width: 50%;
+			height: 4.8rem;
+			border-left: 0.1rem solid $black;
+			position: relative;
+			float: left;
+			transition: background 0.3s;
+			background: $standard-gradient;
+
+			&:hover {
+				cursor: pointer;
+
+				svg {
+
+					.st0 {
+						stroke: $select-green;
+					}
+
+					.st1 {
+						stroke: $select-green;
+					}
+				}
+			}
+
+			&.notification {
+
+				svg {
+
+					.st0 {
+						stroke: $light-blue;
+					}
+
+					.st1 {
+						stroke: $light-blue;
+						fill: $light-blue;
+					}
+				}
+
+				.notification-notch {
+					transform: translateY(0);
+				}
+			}
+
+			&.active {
+				background: $active-gradient;
+			}
+
+			svg {
+				width: 1.7rem;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+
+				.st0 {
+		            fill: none;
+		            stroke: $white;
+		            stroke-width: 4;
+		            stroke-miterlimit: 10;
+		            transition: all 0.3s;
+				}
+
+				.st1 {
+		            fill: none;
+		            stroke: $white;
+		            stroke-width: 3.4307;
+		            stroke-miterlimit: 10;
+		            transition: all 0.3s;
+				}
+			}
+
+			.notification-notch {
+				width: 100%;
+				height: 0.5rem;
+				background: $light-blue;
+				border-top: 0.1rem solid $black;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transform: translateY(0.6rem);
+				transition: transform 0.3s;
+			}
+		}
+
+		.call-history-control {
+			@extend .contact-list-control;
+
+			&:hover {
+
+				.st1 {
+					fill: $select-green;
+				}
+			}
+
+			svg {
+				width: 1.6rem;
+
+		    	.st0 {
+                  fill: none;
+                  stroke: $white;
+                  stroke-width: 5;
+                  stroke-linecap: round;
+                  stroke-miterlimit: 10;
+		        }
+
+		    	.st1 {
+                  fill: $white;
+                  stroke: $white;
+                  stroke-width: 1.2924;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+		        }
+			}
+		}
+	}
+
+	.tooltips {
+		position: absolute;
+		top: 5rem;
+		left: 0;
+		width: 100%;
+		height: 4rem;
+		background: $active-grey-2;
+		color: $light-grey;
+		font-size: 1rem;
+		text-transform: uppercase;
+		@include apercu-bold;
+		transition: all 0.3s;
+
+		&.slide {
+			top: -4rem;
+		}
+
+		&.slide-more {
+			top: -11.9rem;
+		}
+
+		.tooltip {
+			position: absolute;
+			top: 1.3rem;
+			height: 4rem;
+			opacity: 0;
+			z-index: -1;
+			width: 100%;
+			text-align: center;
+
+
+			&.call {
+
+				&.show {
+					opacity: 1;
+					z-index: 1;
+				}
+			}
+
+			&.add-contact {
+				@extend .call;
+				opacity: -1;
+				z-index: -1;
+
+				span {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					opacity: 0;
+					z-index: -1;
+					transition: all 0.3s;
+
+					&.message2 {
+						top: -0.5rem;
+					}
+
+					&.show {
+						opacity: 1;
+						z-index: 1;
+					}
+				}
+
+				.cta-panel {
+					border-top: 0.2rem solid $normal-grey-2;
+					background: $active-grey-1;
+					position: relative;
+					margin: 2.7rem 0 0 0;
+
+					.button {
+					    background: $normal-grey-2;
+					    display: inline-block;
+					    transition: color 0.3s;
+					    padding: 1.1rem 2rem;
+					    @include apercu-bold;
+					    font-size: 1.2rem;
+					    margin: 2rem 0;
+					    transition: color 0.3s;
+
+					    &:hover {
+					    	cursor: pointer;
+					    	color: $select-green;
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+

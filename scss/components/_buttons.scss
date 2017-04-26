@@ -1,0 +1,40 @@
+.c9-button {
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  color: $white;
+  font-size: 20px;
+  padding: 20px 40px 20px 40px;
+  text-decoration: none;
+  border-bottom: 1px solid $black;
+
+  @include transition( transform 0.15s ease-out );
+
+  cursor: pointer;
+
+  &.available {
+    background: $button-available;
+
+    &:hover {
+      background: $button-available-hover;
+      text-decoration: none;
+    }
+  }
+
+  &.shout {
+    // background: $button-shout;
+    &:hover {
+      background: $button-shout;
+    }
+  }
+
+  &.away {
+    background: $button-available-away;
+
+    &:hover {
+      background: $button-available-away-hover;
+    }
+  }
+}
+

@@ -1,0 +1,300 @@
+{% set args = { 'title': "#{ title }", 'body_class': "#{ body_class }" } %}
+
+{% include "components/header.twig" with args %}
+
+
+
+<section class="typography">
+    <div class="title">
+        Typography
+    </div>
+    <div class="macro">
+        <h1>
+            undefined
+        </h1>
+
+        <h2>
+            undefined
+        </h2>
+
+        <h3>
+            Heading 3
+        </h3>
+
+        <pre>
+font-size: 1.6rem;
+line-height: 1;
+font-weight: 600;
+letter-spacing: 1px;
+margin: 0 0 0.4rem;
+text-transform: uppercase;
+        </pre>
+
+        <h4>
+            Heading 4
+        </h4>
+        <pre>
+font-size: 1.2rem;
+line-height: 1;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+        </pre>
+
+        <h5>
+            Heading 5
+        </h5>
+
+        <pre>
+font-size: 1rem;
+line-height: 1;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin: 0.1rem 0 0;
+        </pre>
+
+        <h6>
+            Heading 6
+        </h6>
+
+        <pre>
+font-size: 0.9rem;
+line-height: 1;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin: 0;
+        </pre>
+
+        <p>
+            Paragraph text - 10px / 100% / Normal
+        </p>
+
+{#         <ul>
+            <li>
+                List items
+            </li>
+            <li>
+                List items
+            </li>
+            <li>
+                List items
+            </li>
+        </ul>
+
+        <blockquote>
+            Blockquote
+        </blockquote> #}
+    </div>
+</section>
+
+
+<section class="colors">
+    <div class="title">
+        Colors
+    </div>
+    <div class="macro">
+        <div class="color-block black">
+            <p>
+                Black
+            </p>
+            <p>
+                #050609
+            </p>
+            <div class="block black"></div>
+        </div>
+        <div class="color-block white">
+            <p>
+                White
+            </p>
+            <p>
+                #ffffff
+            </p>
+            <div class="block white"></div>
+        </div>
+        <div class="color-block hot-blue">
+            <p>
+                Hot Blue
+            </p>
+            <p>
+                #222DF2
+            </p>
+            <div class="block hot-blue"></div>
+        </div>
+        <div class="color-block light-blue">
+            <p>
+                Light Blue
+            </p>
+            <p>
+                #29aae1
+            </p>
+            <div class="block light-blue"></div>
+        </div>
+        <div class="color-block cool-pink">
+            <p>
+                Cool Pink
+            </p>
+            <p>
+                #ff7a8b
+            </p>
+            <div class="block cool-pink"></div>
+        </div>
+        <div class="color-block red">
+            <p>
+                Red
+            </p>
+            <p>
+                #ff273e
+            </p>
+            <div class="block red"></div>
+        </div>
+        <div class="color-block green">
+            <p>
+                Green
+            </p>
+            <p>
+                #12f488
+            </p>
+            <div class="block green"></div>
+        </div>
+        <div class="color-block select-green">
+            <p>
+                Select Green
+            </p>
+            <p>
+                #29e1c1
+            </p>
+            <div class="block select-green"></div>
+        </div>
+        <div class="color-block grey">
+            <p>
+                Grey
+            </p>
+            <p>
+                #2d3037
+            </p>
+            <div class="block grey"></div>
+        </div>
+        <div class="color-block light-grey">
+            <p>
+                Light Grey
+            </p>
+            <p>
+                #e8e8e8
+            </p>
+            <div class="block light-grey"></div>
+        </div>
+        <div class="color-block medium-grey">
+            <p>
+                Medium Grey
+            </p>
+            <p>
+                #929395
+            </p>
+            <div class="block medium-grey"></div>
+        </div>
+        <div class="color-block dark-grey">
+            <p>
+                Dark Grey
+            </p>
+            <p>
+                #151a20
+            </p>
+            <div class="block dark-grey"></div>
+        </div>
+        <div class="color-block almost-black">
+            <p>
+                Almost Black
+            </p>
+            <p>
+                #151516
+            </p>
+            <div class="block almost-black"></div>
+        </div>
+        <div class="color-block purple">
+            <p>
+                Purple
+            </p>
+            <p>
+                #4c30f4
+            </p>
+            <div class="block purple"></div>
+        </div>
+        <div class="color-block dark-purple">
+            <p>
+                Dark Purple
+            </p>
+            <p>
+                #151c3d
+            </p>
+            <div class="block dark-purple"></div>
+        </div>
+{#         <div class="color-block dark-white">
+            <p>
+                Dark White
+            </p>
+            <p>
+                #e8e8e8
+            </p>
+            <div class="block dark-white"></div>
+        </div> #}
+        <div class="color-block dark-beige">
+            <p>
+                Dark Beige
+            </p>
+            <p>
+                #5d5d5b
+            </p>
+            <div class="block dark-beige"></div>
+        </div>
+        <div class="color-block active-grey-1">
+            <p>
+                Active Grey 1
+            </p>
+            <p>
+                #4f5563
+            </p>
+            <div class="block active-grey-1"></div>
+        </div>
+        <div class="color-block active-grey-2">
+            <p>
+                Active Grey 2
+            </p>
+            <p>
+                #3e424b
+            </p>
+            <div class="block active-grey-2"></div>
+        </div>
+        <div class="color-block normal-grey-1">
+            <p>
+                Normal Grey 1
+            </p>
+            <p>
+                #33373e
+            </p>
+            <div class="block normal-grey-1"></div>
+        </div>
+        <div class="color-block normal-grey-2">
+            <p>
+                Normal Grey 2
+            </p>
+            <p>
+                #2d3037
+            </p>
+            <div class="block normal-grey-2"></div>
+        </div>
+{#         <div class="color-block normal-grey-middle">
+            <p>
+                Normal Grey Middle
+            </p>
+            <p>
+                #30333a
+            </p>
+            <div class="block normal-grey-middle"></div>
+        </div> #}
+    </div>
+</section>
+
+
+{% include "components/footer.twig" %}

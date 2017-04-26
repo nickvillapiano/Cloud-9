@@ -1,0 +1,93 @@
+// _landing-page.scss
+
+.style-guide {
+
+    &.landing-page {
+
+        a, a:hover, a:active, a:visited, a:link {
+            text-decoration: none;
+        }
+
+        nav {
+            text-align: center;
+            text-transform: uppercase;
+            width: 100%;
+            border-bottom: 0.1rem solid $black;
+            margin: 0 0 -3.4rem 0;
+            padding-bottom: 5rem;
+
+            .heading {
+                @include apercu-bold;
+                font-size: 2.2rem;
+                color: $dark-beige;
+                margin: 5rem 0 2.3rem;
+            }
+
+            .nav-macro {
+                overflow: auto;
+
+                .nav-micro {
+                    height: 17.5rem;
+                    width: 30%;
+                    margin: 0 4% 0 0;
+                    background: $active-grey-2;
+                    color: $white;
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: 1.2rem;
+                    position: relative;
+                    transition: all 0.3s;
+
+                    &:nth-of-type(3) {
+                        margin: 0 0 0 0;
+                    }
+
+                    &:hover {
+                        background: $select-green;
+                        color: $normal-grey-2;
+                    }
+
+                    .content-wrapper {
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        .title {
+
+                        }
+
+                        .number {
+                            @include apercu-bold;
+                            font-size: 5rem;
+                            margin: 1.4rem 0 1.3rem;
+                        }
+
+                        .description {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 730px) {
+
+    .style-guide {
+
+        &.landing-page {
+
+            nav {
+
+                .nav-macro {
+
+                    .nav-micro {
+                        width: 100%;
+                        margin: 0 0 4rem;
+                    }
+                }
+            }
+        }
+    }
+}

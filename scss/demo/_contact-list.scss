@@ -1,0 +1,950 @@
+// _contact-list.scss
+
+.contact-list {
+	background: $dark-grey;
+	overflow: auto;
+	width: 100%;
+	height: 50rem;
+	height: 52rem;
+	border-top: 0.2rem solid $black;
+	border-bottom: 0.1rem solid $grey;
+	//
+	margin-bottom: 3rem;
+	overflow-x: hidden;
+	transition: height 0.2s;
+
+	#contact-list-ul {
+		float: left;
+		width: 100%;
+		margin: 0;
+		//
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: -1;
+		transition: all 0.15s;
+		//
+		opacity: 1;
+		z-index: 1;
+		transition: all 0.3s;
+		transform: translateX(-100%);
+
+		&.show {
+			opacity: 1;
+			z-index: 1;
+			//
+			transform: translateX(0);
+		}
+
+		li {
+			color: $white;
+			background: $standard-gradient;
+			overflow: hidden;
+			width: 100%;
+			padding: 1.5rem 0.5rem 1.5rem 2rem;
+			border-bottom: 0.2rem solid $black;
+			position: relative;
+			transition: background 0.3s;
+			//
+			padding: 1rem 0.5rem 1rem 2rem;
+			// Corner settings icon
+
+			// &:before {
+			// 	opacity: 0;
+			// 	content: "";
+			// 	width: 2rem;
+			// 	height: 2rem;
+			// 	position: absolute;
+			// 	top: -0.1rem;
+			// 	left: 0;
+			// 	background: url(../images/notch.png) center center no-repeat;
+			// 	background-size: 100%;
+			// }
+
+			&:hover {
+				// Corner settings icon
+				// &:before {
+				// 	opacity: 1;
+				// }
+				cursor: pointer;
+
+				.wrapped {
+
+					.meta {
+
+						.chat-button {
+
+							svg {
+
+								.st0 {
+									stroke: $select-green;
+								}
+
+								.st1 {
+									fill: $select-green;
+								}
+							}
+						}
+
+						.text-button {
+
+							svg {
+
+								.st0 {
+									stroke: $white;
+								}
+							}
+						}
+					}
+				}
+
+				.controls {
+					opacity: 1;
+				}
+			}
+
+			&:nth-of-type(1) {
+
+				&.reorder-state {
+
+					.meta {
+
+						.action-buttons {
+
+							.chat-button {
+
+								.send-to-top {
+									visibility: hidden;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.divider {
+				height: 1.5rem;
+				background: $black;
+				padding: 0;
+				position: relative;
+    			height: 0.9rem;
+    			margin-top: -0.2rem;
+
+				// .hr {
+				// 	width: 100%;
+				// 	height: 0.1rem;
+				// 	background: $normal-grey-2;
+				// 	position: relative;
+				// 	top: 50%;
+				// 	left: 0;
+				// 	transform: translateY(-50%);
+				// 	margin-bottom: 0.1rem;
+
+				// 	& + .hr {
+				// 		margin-bottom: 0;
+				// 	}
+				// }
+
+				.dash-line {
+					background: $grey url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==') repeat;
+					height: 0.3rem;
+					margin: 0.3rem 0;
+				}
+			}
+
+			.availability {
+				float: left;
+			    width: 0.4rem;
+			    height: 3rem;
+			    background: $black;
+			    margin: 0.1rem 0 0 -1rem;
+			    position: relative;
+			    overflow: hidden;
+
+			    .bar-lines {
+			    	position: absolute;
+			    	top: 0;
+			    	left: 0;
+			    	width: 0.4rem;
+			    	height: 3rem;
+			    	background-color: transparent;
+			    	z-index: 2;
+
+			    	div {
+			    		background-color: $black;
+			    		width: 0.4rem;
+			    		height: 0.1rem;
+			    		position: relative;
+			    		z-index: 2;
+			    		margin-bottom: 0.3rem;
+			    		//
+					    margin-bottom: 0.4rem;
+					    top: -0.1rem;
+					    //
+					    background-color: $grey;
+			    	}
+			    }
+
+			    .volume-bar {
+			    	background-color: $black;
+			    	width: 0.4rem;
+			    	height: 3rem;
+			    	position: absolute;
+			    	top: 0;
+			    	left: 0;
+			    }
+			}
+
+			.meta {
+				float: left;
+				position: relative;
+				width: 100%;
+				text-transform: uppercase;
+				margin: 0 0 0 0.5rem;
+
+				.contact-name {
+					color: $white;
+					font-size: 1.6rem;
+				}
+
+				.contact-status {
+					color: $light-grey;
+					font-size: 1rem;
+					margin: 0.1rem 0 0;
+				}
+
+				.action-buttons {
+					transition: all 0.15s;
+					opacity: 1;
+				}
+
+
+				.chat-button {
+					position: absolute;
+					top: -1.5rem;
+					right: 6.5rem;
+					height: 6.2rem;
+
+					svg {
+						position: relative;
+						top: 50%;
+						transform: translateY(-50%);
+						height: 2rem;
+
+						.st0 {
+							stroke: $white;
+							stroke-width: 3;
+							// transition: stroke 0.3s;
+						}
+					}
+
+					&.phone {
+
+						.st0 {
+                            fill: none;
+                            stroke: $white;
+                            stroke-miterlimit: 10;
+						}
+					}
+				}
+
+				.text-button {
+					@extend .chat-button;
+					right: 0rem;
+					padding: 0 1.5rem 0 0;
+					border-left: 1px solid $black;
+
+					svg {
+						margin: 0 0 0 1.5rem;
+
+						.st0 {
+							stroke-width: 1;
+							fill: none;
+						}
+					}
+				}
+			}
+
+			.controls {
+				float: left;
+				width: 100%;
+				overflow: auto;
+				position: absolute;
+				bottom: 0.4rem;
+				left: 2.5rem;
+				opacity: 0;
+				padding: 0 0 0.1rem 0;
+
+				.grabber {
+					display: inline-block;
+
+					&:hover {
+						cursor: move;
+						cursor: grab;
+						cursor: -webkit-grab;
+					}
+
+					svg {
+						height: 0.8rem;
+						vertical-align: middle;
+
+						.st0 {
+							fill: $dark-beige;
+						}
+					}
+				}
+
+				.cog {
+					@extend .grabber;
+					margin: 0.1rem 0 0 1.2rem;
+					position: relative;
+					top: 0.1rem;
+
+					&:hover {
+						cursor: pointer;
+					}
+
+					svg {
+						height: 0.9rem;
+
+						.st0 {
+
+						}
+					}
+				}
+			}
+
+			&.first-sorted {
+				margin: 0.3rem 0 0 0;
+				border-top: 0.1rem solid $black;
+			}
+
+			&.away {
+				border-top: 0.3rem solid $black;
+
+				& + .away {
+					border-top: 0.1rem solid $black;
+				}
+			}
+
+			&.shouting {
+				background: $active-gradient;
+
+				.availability {
+
+					.bar-lines {
+
+						div {
+							background: $black;
+						}
+					}
+
+					.volume-bar {
+						background-color: $green;
+						animation: voiceBarAnimation 1s linear infinite;
+					}
+				}
+
+				.meta {
+
+					.chat-button {
+
+						svg {
+
+							.st0 {
+								stroke: $green;
+							}
+						}
+					}
+
+					.text-button {
+						background: linear-gradient(180deg, $normal-grey-1 0%, $normal-grey-middle 19%, $normal-grey-2 108%);
+
+						svg {
+
+							.st0 {
+								stroke: $white;
+							}
+						}
+					}
+				}
+			}
+
+			&.unavailable {
+				background: $dark-grey;
+
+				.meta {
+
+					.contact-name {
+						color: $dark-beige;
+					}
+
+					.contact-status {
+						color: $dark-beige;
+					}
+
+					.chat-button {
+
+						svg {
+
+							.st0 {
+								stroke: $black;
+								fill: $black;
+							}
+						}
+					}
+
+					.text-button {
+
+						svg {
+
+							.st0 {
+								stroke: $white;
+								fill: none;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					// Corner settings icon
+					// &:before {
+					// 	opacity: 1;
+					// }
+					cursor: pointer;
+
+					.wrapped {
+
+						.meta {
+
+							.chat-button {
+
+								svg {
+
+									.st0 {
+										stroke: $black;
+									}
+
+									.st1 {
+										fill: $black;
+									}
+								}
+							}
+
+							.text-button {
+
+								svg {
+
+									.st0 {
+										stroke: $white;
+									}
+								}
+							}
+						}
+					}
+
+					.controls {
+						opacity: 1;
+					}
+				}
+			}
+
+			&.messages-waiting {
+
+				.meta {
+
+					.text-button {
+
+						svg {
+
+							.st0 {
+								stroke: $light-blue;
+							}
+						}
+					}
+				}
+			}
+
+			&.busy-person {
+
+				.meta {
+
+					.chat-button {
+
+						svg {
+
+							.st0 {
+								stroke: $black;
+							}
+						}
+					}
+
+					.text-button {
+
+						svg {
+
+							.st0 {
+								stroke: $white;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					// Corner settings icon
+					// &:before {
+					// 	opacity: 1;
+					// }
+					cursor: pointer;
+
+					.wrapped {
+
+						.meta {
+
+							.chat-button {
+
+								svg {
+
+									.st0 {
+										stroke: $black;
+									}
+
+									.st1 {
+										fill: $black;
+									}
+								}
+							}
+
+							.text-button {
+
+								svg {
+
+									.st0 {
+										stroke: $white;
+									}
+								}
+							}
+						}
+					}
+
+					.controls {
+						opacity: 1;
+					}
+				}
+			}
+
+			&.on-a-call {
+
+				.wrapped {
+
+					.meta {
+
+						.chat-button {
+
+							svg {
+
+								.st0 {
+									stroke: $white;
+								}
+
+								.st1 {
+									stroke: $black;
+									fill: $black;
+									stroke-width: 2;
+								}
+							}
+						}
+
+						.text-button {
+
+							svg {
+
+								.st0 {
+									stroke: $white;
+								}
+							}
+						}
+					}
+				}
+
+				&:hover {
+					// Corner settings icon
+					// &:before {
+					// 	opacity: 1;
+					// }
+					cursor: pointer;
+
+					.wrapped {
+
+						.meta {
+
+							.chat-button {
+
+								svg {
+
+									.st0 {
+										stroke: $select-green;
+									}
+
+									.st1 {
+										fill: $black;
+									}
+								}
+							}
+
+							.text-button {
+
+								svg {
+
+									.st0 {
+										stroke: $white;
+									}
+								}
+							}
+						}
+					}
+
+					.controls {
+						opacity: 1;
+					}
+				}
+			}
+
+			.contact-tile {
+
+				&.divider {
+					height: 1.5rem;
+					background: $black;
+					padding: 0;
+					position: relative;
+	    			height: 0.9rem;
+	    			margin-top: -0.2rem;
+
+					// .hr {
+					// 	width: 100%;
+					// 	height: 0.1rem;
+					// 	background: $normal-grey-2;
+					// 	position: relative;
+					// 	top: 50%;
+					// 	left: 0;
+					// 	transform: translateY(-50%);
+					// 	margin-bottom: 0.1rem;
+
+					// 	& + .hr {
+					// 		margin-bottom: 0;
+					// 	}
+					// }
+
+					.dash-line {
+						background: $grey url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==') repeat;
+						height: 0.3rem;
+						margin: 0.3rem 0;
+					}
+				}
+
+				.availability {
+					float: left;
+				    width: 0.4rem;
+				    height: 3rem;
+				    background: $black;
+				    margin: 0.1rem 0 0 -1rem;
+				    position: relative;
+				    overflow: hidden;
+
+				    .bar-lines {
+				    	position: absolute;
+				    	top: 0;
+				    	left: 0;
+				    	width: 0.4rem;
+				    	height: 3rem;
+				    	background-color: transparent;
+				    	z-index: 2;
+
+				    	div {
+				    		background-color: $black;
+				    		width: 0.4rem;
+				    		height: 0.1rem;
+				    		position: relative;
+				    		z-index: 2;
+				    		margin-bottom: 0.3rem;
+				    		//
+						    margin-bottom: 0.4rem;
+						    top: -0.1rem;
+						    //
+						    background-color: $grey;
+				    	}
+				    }
+
+				    .volume-bar {
+				    	background-color: $black;
+				    	width: 0.4rem;
+				    	height: 3rem;
+				    	position: absolute;
+				    	top: 0;
+				    	left: 0;
+				    }
+				}
+
+				.meta {
+					float: left;
+					position: relative;
+					width: 100%;
+					text-transform: uppercase;
+					margin: 0 0 0 0.5rem;
+
+					.contact-name {
+						color: $white;
+						font-size: 1.6rem;
+					}
+
+					.contact-status {
+						color: $light-grey;
+						font-size: 1rem;
+						margin: 0.1rem 0 0;
+					}
+
+					.chat-button {
+						position: absolute;
+						top: -1.5rem;
+						right: 6.5rem;
+						height: 6.2rem;
+
+						svg {
+							position: relative;
+							top: 50%;
+							transform: translateY(-50%);
+							height: 2rem;
+
+							.st0 {
+								stroke: $white;
+								stroke-width: 3;
+								// transition: stroke 0.3s;
+							}
+						}
+
+						&.phone {
+
+							.st0 {
+	                            fill: none;
+	                            stroke: $white;
+	                            stroke-miterlimit: 10;
+							}
+						}
+					}
+
+					.text-button {
+						@extend .chat-button;
+						right: 0rem;
+						padding: 0 1.5rem 0 0;
+						border-left: 1px solid $black;
+
+						svg {
+							margin: 0 0 0 1.5rem;
+
+							.st0 {
+								stroke-width: 1;
+							}
+						}
+					}
+				}
+
+				&.first-sorted {
+					margin: 0.3rem 0 0 0;
+					border-top: 0.1rem solid $black;
+				}
+
+				&.away {
+					border-top: 0.3rem solid $black;
+
+					& + .away {
+						border-top: 0.1rem solid $black;
+					}
+				}
+
+				&.shouting {
+					background: $active-gradient;
+					outline: 0.1rem solid red;
+
+					.availability {
+
+						.bar-lines {
+
+							div {
+								background: $black;
+							}
+						}
+
+						.volume-bar {
+							background-color: $green;
+							animation: voiceBarAnimation 1s linear infinite;
+						}
+					}
+
+					.meta {
+
+						.chat-button {
+
+							svg {
+
+								.st0 {
+									stroke: $green;
+								}
+							}
+						}
+
+						.text-button {
+							background: linear-gradient(180deg, $normal-grey-1 0%, $normal-grey-middle 19%, $normal-grey-2 108%);
+
+							svg {
+
+								.st0 {
+									stroke: $white;
+								}
+							}
+						}
+					}
+				}
+
+				&.unavailable {
+					background: $dark-grey;
+
+					.meta {
+
+						.contact-name {
+							color: $dark-beige;
+						}
+
+						.contact-status {
+							color: $dark-beige;
+						}
+
+						.chat-button {
+
+							svg {
+
+								.st0 {
+									stroke: $black;
+									fill: $black;
+								}
+							}
+						}
+
+						.text-button {
+
+							svg {
+
+								.st0 {
+									stroke: $white;
+									fill: none;
+								}
+							}
+						}
+					}
+				}
+
+				&.messages-waiting {
+
+					.meta {
+
+						.text-button {
+
+							svg {
+
+								.st0 {
+									stroke: $light-blue;
+								}
+							}
+						}
+					}
+				}
+
+				&.busy-person {
+
+					.meta {
+
+						.chat-button {
+
+							svg {
+
+								.st0 {
+									stroke: $black;
+								}
+							}
+						}
+
+						.text-button {
+
+							svg {
+
+								.st0 {
+									stroke: $white;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.notification-active {
+				background: $notification-blue;
+
+				.meta {
+				}
+			}
+		}
+	}
+}
+
+.reorder-save {
+	position: absolute;
+	bottom: 4.8rem;
+	left: 0;
+	width: 100%;
+	background: $almost-black;
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 5;
+	height: 8.5rem;
+	transform: translateY(100%);
+	transition: transform 0.3s;
+
+	.button {
+		@include apercu-bold;
+		font-size: 1.2rem;
+		width: 10rem;
+		height: 3.6rem;
+		margin: 0 auto;
+		padding: 1.1rem;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $select-green;
+			cursor: pointer;
+		}
+
+		&.save {
+			background: $normal-grey-2;
+			margin: 1.5rem auto -0.3rem;
+		}
+	}
+
+	&.show {
+		transform: translateY(0);
+	}
+}
+
+@keyframes voiceBarAnimation {
+    0% {
+        top: 0.5rem;
+    }
+
+    50% {
+    	top: 2rem;
+    }
+
+    100% {
+       top: 0.5rem;
+    }
+}
+

@@ -1,0 +1,107 @@
+// _preferences.scss
+
+.preferences {
+    background: $almost-black;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    z-index: 6;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    .header {
+        font-size: 1.4rem;
+        text-align: center;
+        position: relative;
+        border-bottom: 0.2rem solid $active-grey-1;
+        padding: 0.7rem 0;
+
+        .close {
+            position: absolute;
+            top: 0.6rem;
+            right: 1rem;
+
+            svg {
+                width: 0.8rem;
+
+                .st0 {
+                    fill: none;
+                    stroke: $white;
+                    stroke-width: 30;
+                    stroke-miterlimit: 10;
+                    transition: all 0.2s;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                svg {
+
+                    .st0 {
+                        stroke: $select-green;
+                    }
+                }
+            }
+        }
+    }
+
+    .line-items {
+
+        .line-item {
+            padding: 1.7rem 2rem;
+            border-bottom: 0.1rem solid $active-grey-1;
+            overflow: auto;
+
+            .title {
+                float: left;
+                font-size: 1.4rem;
+                @include apercu-bold;
+                border: none;
+            }
+
+            .caret {
+                float: right;
+                transform: rotate(90deg);
+                margin: 0.2rem 0 0 0;
+
+                svg {
+                    width: 0.9rem;
+
+                    .st0 {
+                        fill: $almost-black;
+                        stroke: $almost-black;
+                    }
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: $black;
+                background: $select-green;
+
+                .caret {
+
+                    svg {
+
+                        .st0 {
+                            fill: $black;
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.slide-in {
+        transform: translateX(0);
+    }
+
+    &.slide-out {
+        transform: translateX(-100%);
+    }
+}

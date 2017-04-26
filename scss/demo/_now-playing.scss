@@ -1,0 +1,1399 @@
+// _now-playing.scss
+
+.now-playing {
+	width: 100%;
+	// background: linear-gradient(180deg, $blue, $purple);
+	// height: 8rem;
+    max-height: 8rem;
+    overflow: hidden;
+    //
+    max-height: 12rem;
+
+    .line-item {
+        height: 8rem;
+        transition: all 0.3s;
+        //
+        height: 12rem;
+        z-index: 1;
+        opacity: 1;
+
+        &.large {
+            overflow: auto;
+            position: relative;
+            top: 0;
+            width: 100%;
+            background: $hot-blue;
+            //
+            overflow: hidden;
+
+            .meta {
+                float: left;
+                text-transform: uppercase;
+                margin: 0 0 0 2.4rem;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+
+                .title {
+                    font-size: 1.6rem;
+                    margin: 0 0 0.4rem;
+                }
+
+                .sub-title {
+                    font-size: 1rem;
+                    font-style: italic;
+                    color: $dark-white;
+                }
+            }
+
+            .controls {
+                float: right;
+                overflow: auto;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+
+                .microphone {
+                    float: left;
+                    position: relative;
+
+                    svg {
+                        height: 3rem;
+
+                        .st0 {
+                            stroke: $green;
+                            fill: $green;
+                        }
+                    }
+                }
+
+                .volume {
+                    float: left;
+                    margin: 0.2rem 3rem 0 3rem;
+
+                    svg {
+                        height: 2rem;
+
+                        .st0 {
+                            stroke: $white;
+                            fill: $white;
+                        }
+                    }
+                }
+
+                .close-x {
+                    float: left;
+                    margin: 0.8rem 1.5rem 0 0;
+
+                    svg {
+                        width: 1.2rem;
+
+                        .st0 {
+                            fill: none;
+                            stroke: $white;
+                            stroke-width:30;
+                            stroke-miterlimit:10;
+                        }
+                    }
+                }
+            }
+
+            // .waveform {
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 8rem;
+            //     background: url(../images/wave-lines-long-white.png) no-repeat;
+            //     z-index: 1;
+            //     opacity: 0.15;
+            //     // background-size: 1080% 40%;
+            //     // background-position-y: 50%;
+            //     // background-position: 0rem 50%;
+            //     animation: wave 30s infinite linear;
+            // }
+
+            &.broadcast {
+                background: $dark-purple;
+
+                .controls {
+
+                    .microphone {
+                        display: none;
+                    }
+                }
+
+                // .waveform {
+                //     background: url(../images/wave-lines-long.png) no-repeat;
+                //     opacity: 0.4;
+                // }
+            }
+
+            &.small {
+
+                // .waveform {
+                //     background-size: 600% 50%;
+                // }
+            }
+
+            &.fpo {
+                height: 12rem;
+
+                .fpo-wrapper {
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 1;
+                        transition: all 0.3s;
+                        opacity: 0;
+                        z-index: -1;
+                        background: $black;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        &.state1 {
+                        }
+
+                        &.state2 {
+                        }
+
+                        &.show {
+                            opacity: 1;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+
+            &.outgoing-call {
+                position: absolute;
+            }
+
+            &.active {
+                z-index: 5;
+            }
+        }
+
+        &.small {
+            overflow: auto;
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 4rem;
+            background: $dark-purple;
+            border-top: 0.2rem solid $black;
+            border-bottom: 0.2rem solid $black;
+
+            .meta {
+                float: left;
+                text-transform: uppercase;
+                margin: 0 0 0 2rem;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+
+                .title {
+                    font-size: 1.6rem;
+                    margin: 0;
+                }
+
+                .sub-title {
+                    display: none;
+                }
+            }
+
+            .controls {
+                float: right;
+                overflow: auto;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+
+                .microphone {
+                    display: none;
+                }
+
+                .volume {
+                    float: left;
+                    margin: 0.5rem 3rem 0 3rem;
+
+                    svg {
+                        height: 2rem;
+
+                        .st0 {
+                            stroke: $white;
+                            fill: $white;
+                        }
+                    }
+                }
+
+                .close-x {
+                    float: left;
+                    margin: 0.8rem 1.5rem 0 0;
+
+                    svg {
+                        width: 1.2rem;
+
+                        .st0 {
+                            fill: none;
+                            stroke: $white;
+                            stroke-width:30;
+                            stroke-miterlimit:10;
+                        }
+                    }
+                }
+            }
+
+            .waveform {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4rem;
+                // background: url(../images/wave-lines-long.png) no-repeat;
+                z-index: 1;
+                opacity: 0.4;
+                // background-size: 600% 50%;
+                // animation: wave 30s infinite linear;
+            }
+        }
+
+        &.contract {
+            // height: 0;
+            // transform: translateY(-100%);
+            opacity: 0;
+            z-index: -1;
+            // transition-delay: 0.15s;
+
+            .main {
+                opacity: 0 !important;
+            }
+        }
+
+        // nv: new style with volume bar horizontal under the contact info and call controls
+
+        &.voice {
+            // background: url('../images/waveform-o.svg') center center no-repeat $hot-blue;
+            // background-size: 104%;
+            background: $hot-blue;
+            z-index: 2;
+
+            &.incoming-call {
+
+                .main {
+                    opacity: 1;
+                    transition: all 0.4s;
+                    transition-delay: 0.15s;
+
+                    .waveform {
+                        position: absolute;
+                        top: 0.4rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        opacity: 0.3;
+                        transition: all 0.3s;
+                    }
+
+                    .contact-information {
+                        text-transform: uppercase;
+                        text-align: center;
+                        margin: 1.8rem 0 0 0;
+                        transition: margin 0.3s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        .name {
+                            font-size: 2.2rem;
+                            position: relative;
+                            top: 0;
+                            transition: top 0.3s;
+                        }
+
+                        .company {
+                            font-size: 1rem;
+                            color: $light-grey;
+                            margin: 0.2rem 0 0 0;
+                        }
+                    }
+
+                    .communication-icon {
+                        position: relative;
+                        height: 3.2rem;
+                        top: 0;
+                        transition: top 0.3s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        svg {
+                            position: absolute;
+                            top: 0.8rem;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            opacity: 0;
+                            z-index: -1;
+                            transition: all 0.15s;
+                            width: 2.5rem;
+
+                            &#reply-icon {
+                                opacity: 1;
+                                z-index: 1;
+
+                                .st0 {
+                                    fill: none;
+                                    stroke: $white;
+                                    stroke-width: 0.25rem;
+                                }
+
+                                .st1 {
+                                    fill: $white;
+                                    stroke: $white;
+                                    //
+                                    stroke: none;
+                                }
+                            }
+
+                            &#end-call-icon {
+                                transform: rotate(135deg);
+                                margin: -0.2rem 0 0 -1.3rem;
+
+                                .st0 {
+                                    fill: $red;
+                                }
+                            }
+                        }
+
+                        &.engaged {
+
+                            svg {
+
+                                &#reply-icon {
+                                    opacity: 1;
+                                    z-index: 1;
+                                }
+
+                                &#end-call-icon {
+                                    opacity: -1;
+                                    z-index: -1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .volume-controls {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 2rem;
+                    background: $dark-purple;
+                    width: 100%;
+                    overflow: auto;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    .speaker-volume {
+                        float: left;
+                        overflow: auto;
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        svg {
+                            width: 1.3rem;
+                            float: left;
+                            margin: 0 1rem;
+
+                            .st0 {
+                                stroke: $white;
+                                fill: $white;
+                            }
+                        }
+
+                        .volume-bar {
+                            float: left;
+                            width: 32.1rem;
+                            background: $grey;
+                            height: 0.4rem;
+                            margin: 0.5rem 0 0 0;
+                            position: relative;
+                            transition: all 0.3s;
+
+                            .volume-level {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 55%;
+                                height: 0.4rem;
+                                background: $hot-blue;
+                            }
+                        }
+                    }
+
+                    .microphone-controls {
+                        height: 3rem;
+                        width: 5rem;
+                        border-left: 0.1rem solid black;
+                        position: absolute;
+                        right: 0;
+                        opacity: 0;
+                        z-index: -1;
+                        transition: all 0.3s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        svg {
+                            height: 2rem;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            //
+                            margin-top: 0.1rem;
+
+                            .st0 {
+                                stroke: $green;
+                                fill: $green;
+                                stroke-width: 1.5;
+                            }
+                        }
+                    }
+
+                    &.engaged {
+                        height: 3rem;
+
+                        .speaker-volume {
+
+                            .volume-bar {
+                                width: 27.6rem;
+                            }
+                        }
+
+                        .microphone-controls {
+                            opacity: 1;
+                            z-index: 1;
+                        }
+                    }
+                }
+
+                &.active {
+                    z-index: 5;
+                }
+
+                &.engaged {
+
+                    .main {
+
+                        .waveform {
+                            top: -0.45rem;
+                        }
+
+                        .contact-information {
+                            margin: 0.8rem 0 0 0;
+
+                            .name {
+                                top: 0.3rem;
+                            }
+                        }
+
+                        .communication-icon {
+                            top: 0.2rem;
+
+                            svg {
+
+                                &#reply-icon {
+                                    opacity: -1;
+                                    z-index: -1;
+                                }
+
+                                &#end-call-icon {
+                                    opacity: 1;
+                                    z-index: 1;
+
+                                    .st0 {
+                                        stroke: $red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.phone-call {
+                position: absolute;
+
+                .main {
+                    opacity: 1;
+                    transition: all 0.4s;
+                    transition-delay: 0.15s;
+
+                    .waveform {
+                        position: absolute;
+                        top: 0.4rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        opacity: 0.3;
+                        transition: all 0.3s;
+                    }
+
+                    .contact-information {
+                        text-transform: uppercase;
+                        text-align: center;
+                        margin: 1.8rem 0 0 0;
+                        transition: margin 0.3s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        .name {
+                            font-size: 2.2rem;
+                            position: relative;
+                            top: 0;
+                            transition: top 0.3s;
+                        }
+
+                        .company {
+                            font-size: 1rem;
+                            color: $light-grey;
+                            margin: 0.2rem 0 0 0;
+                        }
+                    }
+
+                    .communication-icon {
+                        position: relative;
+                        height: 3.2rem;
+                        top: 0;
+                        transition: top 0.3s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        svg {
+                            position: absolute;
+                            top: 0.8rem;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            opacity: 0;
+                            z-index: -1;
+                            transition: all 0.15s;
+                            width: 2.5rem;
+
+                            &#reply-icon {
+                                opacity: 1;
+                                z-index: 1;
+
+                                .st0 {
+                                    fill: none;
+                                    stroke: $white;
+                                    stroke-width: 0.25rem;
+                                }
+
+                                .st1 {
+                                    fill: $white;
+                                    stroke: $white;
+                                    //
+                                    stroke: none;
+                                }
+                            }
+
+                            &#end-call-icon {
+                                transform: rotate(135deg);
+                                margin: -0.2rem 0 0 -1.3rem;
+
+                                .st0 {
+                                    fill: $red;
+                                }
+                            }
+                        }
+
+                        &.engaged {
+
+                            svg {
+
+                                &#reply-icon {
+                                    opacity: 1;
+                                    z-index: 1;
+                                }
+
+                                &#end-call-icon {
+                                    opacity: -1;
+                                    z-index: -1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .volume-controls {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 2rem;
+                    background: $dark-purple;
+                    width: 100%;
+                    overflow: auto;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    .speaker-volume {
+                        float: left;
+                        overflow: auto;
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        svg {
+                            width: 1.3rem;
+                            float: left;
+                            margin: 0 1rem;
+
+                            .st0 {
+                                stroke: $white;
+                                fill: $white;
+                            }
+                        }
+
+                        .volume-bar {
+                            float: left;
+                            width: 32.1rem;
+                            background: $grey;
+                            height: 0.4rem;
+                            margin: 0.5rem 0 0 0;
+                            position: relative;
+                            transition: all 0.3s;
+
+                            .volume-level {
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 55%;
+                                height: 0.4rem;
+                                background: $hot-blue;
+                            }
+                        }
+                    }
+
+                    .microphone-controls {
+                        height: 3rem;
+                        width: 5rem;
+                        border-left: 0.1rem solid black;
+                        position: absolute;
+                        right: 0;
+                        opacity: 0;
+                        z-index: -1;
+                        transition: all 0.3s;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        svg {
+                            height: 2rem;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+
+                            .st0 {
+                                stroke: $green;
+                                fill: $green;
+                                stroke-width: 1.5;
+                            }
+                        }
+                    }
+
+                    &.engaged {
+                        height: 3rem;
+
+                        .speaker-volume {
+
+                            .volume-bar {
+                                width: 27.6rem;
+                            }
+                        }
+
+                        .microphone-controls {
+                            opacity: 1;
+                            z-index: 1;
+                        }
+                    }
+                }
+
+                &.active {
+                    z-index: 5;
+                }
+
+                &.engaged {
+
+                    .main {
+
+                        .waveform {
+                            top: -0.45rem;
+                        }
+
+                        .contact-information {
+                            margin: 0.8rem 0 0 0;
+
+                            .name {
+                                top: 0.3rem;
+                            }
+                        }
+
+                        .communication-icon {
+                            top: 0.2rem;
+                            //
+                            top: -0.2rem;
+
+                            svg {
+
+                                &#reply-icon {
+                                    opacity: -1;
+                                    z-index: -1;
+                                }
+
+                                &#end-call-icon {
+                                    opacity: 1;
+                                    z-index: 1;
+
+                                    .st0 {
+                                        stroke: $red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.outgoing-call {
+            position: absolute;
+            // background: url('../images/flatline.svg') center center no-repeat $hot-blue;
+            z-index: 2;
+
+            .main {
+                opacity: 1;
+                transition: all 0.4s;
+                transition-delay: 0.15s;
+
+                .waveform {
+                    position: absolute;
+                    top: 52%;
+                    left: 0;
+                    transform: translateY(-48%);
+                    z-index: -1;
+                    opacity: 0.3;
+                }
+
+                .contact-information {
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin: 1.8rem 0 0 0;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    .communication-title {
+                        margin: 0 0 0.7rem 0;
+
+                        em {
+                            animation: loading-animation 0.6s infinite;
+
+                            &:nth-of-type(1) {
+                                animation-delay: 0;
+                            }
+
+                            &:nth-of-type(2) {
+                                animation-delay: 0.2s;
+                            }
+
+                            &:nth-of-type(3) {
+                                animation-delay: 0.4s;
+                            }
+
+                            @keyframes loading-animation {
+
+                                0% {
+                                    opacity: 0;
+                                }
+
+                                50% {
+                                    opacity: 1;
+                                }
+
+                                100% {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .name {
+                        font-size: 2.2rem;
+                    }
+
+                    .company {
+                        font-size: 1rem;
+                        color: $light-grey;
+                        margin: 0.2rem 0 0 0;
+                    }
+                }
+
+                .communication-icon {
+                    position: relative;
+                    height: 3.2rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    svg {
+                        position: absolute;
+                        top: 0.8rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        opacity: 0;
+                        z-index: -1;
+                        transition: all 0.15s;
+                        width: 2.5rem;
+
+                        &#reply-icon {
+                            opacity: 0;
+                            z-index: -1;
+
+                            .st0 {
+                                fill: none;
+                                stroke: $white;
+                                stroke-width: 0.25rem;
+                            }
+                        }
+
+                        &#end-call-icon {
+                            opacity: 1;
+                            z-index: 1;
+                            transform: rotate(135deg);
+                            margin: -0.2rem 0 0 -1.3rem;
+                            //
+                            z-index: -1;
+
+                            .st0 {
+                                fill: $red;
+                                stroke: none;
+                            }
+                        }
+                    }
+
+                    &.engaged {
+
+                        svg {
+
+                            &#reply-icon {
+                                opacity: -1;
+                                z-index: -1;
+                            }
+
+                            &#end-call-icon {
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .volume-controls {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2rem;
+                background: $dark-purple;
+                width: 100%;
+                overflow: auto;
+                transition: all 0.3s;
+                //
+                height: 0;
+                overflow: hidden;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .speaker-volume {
+                    float: left;
+                    overflow: auto;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    svg {
+                        width: 1.3rem;
+                        float: left;
+                        margin: 0 1rem;
+
+                        .st0 {
+                            stroke: $white;
+                            fill: $white;
+                        }
+                    }
+
+                    .volume-bar {
+                        float: left;
+                        width: 32.1rem;
+                        background: $grey;
+                        height: 0.4rem;
+                        margin: 0.5rem 0 0 0;
+                        position: relative;
+                        transition: all 0.3s;
+
+                        .volume-level {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 55%;
+                            height: 0.4rem;
+                            background: $hot-blue;
+                        }
+                    }
+                }
+
+                .microphone-controls {
+                    height: 3rem;
+                    width: 5rem;
+                    border-left: 0.1rem solid black;
+                    position: absolute;
+                    right: 0;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    svg {
+                        height: 2rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+
+                        .st0 {
+                            stroke: $green;
+                            fill: $green;
+                            stroke-width: 1.5;
+                        }
+                    }
+                }
+
+                &.engaged {
+                    height: 3rem;
+
+                    .speaker-volume {
+
+                        .volume-bar {
+                            width: 27.6rem;
+                        }
+                    }
+
+                    .microphone-controls {
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        &.no-answer {
+            position: absolute;
+            background: $dark-grey;
+
+            &.active {
+                opacity: 1;
+                z-index: 5;
+
+                .main {
+                    opacity: 1 !important;
+
+                    .communication-icon {
+
+                        svg {
+
+                            &#end-call-icon {
+                                opacity: 0;
+                                z-index: -1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main {
+                opacity: 1;
+                transition: all 0.4s;
+                transition-delay: 0.15s;
+
+                .contact-information {
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin: 1.8rem 0 0 0;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    .communication-title {
+                        margin: 0 0 0.7rem 0;
+                        color: $red;
+                    }
+
+                    .name {
+                        font-size: 2.2rem;
+                    }
+
+                    .company {
+                        font-size: 1rem;
+                        color: $light-grey;
+                        margin: 0.2rem 0 0 0;
+                    }
+                }
+
+                .communication-icon {
+                    position: relative;
+                    height: 3.2rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    svg {
+                        position: absolute;
+                        top: 0.8rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        opacity: 0;
+                        z-index: -1;
+                        transition: all 0.15s;
+                        width: 2.5rem;
+
+                        &#reply-icon {
+                            opacity: 0;
+                            z-index: -1;
+
+                            .st0 {
+                                fill: none;
+                                stroke: $white;
+                                stroke-width: 0.25rem;
+                            }
+                        }
+
+                        &#end-call-icon {
+                            opacity: 1;
+                            z-index: 1;
+                            transform: rotate(135deg);
+                            margin: -0.2rem 0 0 -1.3rem;
+
+                            .st0 {
+                                fill: $red;
+                            }
+                        }
+                    }
+
+                    &.engaged {
+
+                        svg {
+
+                            &#reply-icon {
+                                opacity: -1;
+                                z-index: -1;
+                            }
+
+                            &#end-call-icon {
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                }
+
+                .message-reply-trigger {
+                    width: 2rem;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-2rem);
+                    opacity: 0;
+                    z-index: -1;
+
+                    &:hover {
+                        cursor: pointer;
+
+                        svg {
+
+                            .st0 {
+                                stroke: $select-green;
+                            }
+                        }
+                    }
+
+                    &.show {
+                        opacity: 1;
+                        z-index: 1;
+                    }
+
+                    svg {
+
+                        .st0 {
+                            stroke: $white;
+                            stroke-width: 1.5;
+                            transition: all 0.3s;
+                        }
+                    }
+                }
+
+                .message-reply {
+                    margin: -2.4rem auto 0;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: all 0.3s;
+                    position: relative;
+                    width: calc(100% - 8rem);
+
+                    &.show {
+                        opacity: 1;
+                        z-index: 1;
+                    }
+
+                    input {
+                        float: left;
+                        font-size: 1rem;
+                        border: none;
+                        background: $black;
+                        padding: 0.75rem 0 0.75rem 1rem;
+                        width: 100%;
+                        color: $white;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::-webkit-input-placeholder {
+                          color: $dark-beige;
+                        }
+                    }
+
+                    .send-button {
+                        float: left;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        color: $dark-beige;
+                        margin: 0.8rem 0 0 -3.5rem;
+
+                        &:hover {
+                            cursor: not-allowed;
+                        }
+
+                        &.active {
+                            color: $select-green;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .x-dismiss {
+                        position: absolute;
+                        top: 0.8rem;
+                        right: -2rem;
+
+                        &:hover {
+                            cursor: pointer;
+
+                            svg {
+
+                                .st0 {
+                                    stroke: $select-green;
+                                    fill: $select-green;
+                                }
+                            }
+                        }
+
+                        svg {
+                            height: 1rem;
+                            width: 1rem;
+
+                            .st0 {
+                                stroke: $white;
+                                fill: $white;
+                                stroke-width: 20;
+                                transition: all 0.3s;
+                            }
+                        }
+                    }
+                }
+
+                .sent-message {
+                    text-align: center;
+                    width: 100%;
+                    position: absolute;
+                    font-size: 1rem;
+                    background: $dark-grey;
+                    text-transform: uppercase;
+                    font-style: italic;
+                    padding: 1rem;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: all 0.3s;
+                    transition-delay: 0.3s;
+
+                    &.show {
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                }
+            }
+
+            .volume-controls {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2rem;
+                background: $dark-purple;
+                width: 100%;
+                overflow: auto;
+                transition: all 0.3s;
+                //
+                height: 0;
+                overflow: hidden;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .speaker-volume {
+                    float: left;
+                    overflow: auto;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    svg {
+                        width: 1.3rem;
+                        float: left;
+                        margin: 0 1rem;
+
+                        .st0 {
+                            stroke: $white;
+                            fill: $white;
+                        }
+                    }
+
+                    .volume-bar {
+                        float: left;
+                        width: 32.1rem;
+                        background: $grey;
+                        height: 0.4rem;
+                        margin: 0.5rem 0 0 0;
+                        position: relative;
+                        transition: all 0.3s;
+
+                        .volume-level {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 55%;
+                            height: 0.4rem;
+                            background: $hot-blue;
+                        }
+                    }
+                }
+
+                .microphone-controls {
+                    height: 3rem;
+                    width: 5rem;
+                    border-left: 0.1rem solid black;
+                    position: absolute;
+                    right: 0;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    svg {
+                        height: 2rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+
+                        .st0 {
+                            stroke: $green;
+                            fill: $green;
+                        }
+                    }
+                }
+
+                &.engaged {
+                    height: 3rem;
+
+                    .speaker-volume {
+
+                        .volume-bar {
+                            width: 27.6rem;
+                        }
+                    }
+
+                    .microphone-controls {
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes wave {
+    0% {
+        // background-size: 1080% 40%;
+        background-position: 0rem 50%;
+    }
+    // 50% {
+    //    // background-size: 1080% 100%;
+    //    background-position: -50rem 50%;
+    // }
+    100% {
+        // background-size: 1080% 40%;
+        background-position: -280rem 50%;
+    }
+}
+
+.morning-hoot {
+    transition: all 0.3s;
+}

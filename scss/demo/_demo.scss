@@ -1,0 +1,102 @@
+// _demo.scss
+
+.demo {
+  background: grey;
+  @include apercu-regular;
+  letter-spacing: 1px;
+  overflow-x: hidden;
+  width: 100vw;
+  margin-bottom: 5rem;
+
+  // nv - adjustments to make the Nativefier app feel more appy
+  &.app {
+
+    .control-panel {
+      display: none;
+    }
+
+    .wrapper {
+      max-width: 100%;
+      min-width: 0;
+    }
+  }
+
+  &.login {
+
+    .wrapper {
+      height: 46rem;
+    }
+  }
+
+  .wrapper {
+    background: black;
+    // border: 0.1rem solid $white;
+    margin: 2rem auto 0;
+    width: 37.5rem;
+    overflow: hidden;
+    // overflow-y: hidden;
+    position: relative;
+    transition: height 0.3s;
+    //
+    height: 75.3rem;
+    //
+    // width: 100%;
+    // max-width: 50rem;
+    // min-width: 32rem;
+
+  	section {
+  		width: 100%;
+  		float: left;
+  		position: relative;
+  	}
+
+    &.height-auto {
+      height: auto;
+    }
+
+		@import "windows-header";
+		@import "now-playing";
+		@import "command-line";
+		@import "contact-list";
+		@import "broadcasts";
+    @import "standalone-divider";
+    @import "status-bar";
+    @import "notification-bar";
+    @import "contact-tile-wrapped";
+    @import "shrink-notification";
+    @import "phone-call-notification";
+    @import "line-item-empty";
+    @import "call-history";
+    @import "create-a-group";
+    @import "search-results";
+    @import "search-panel";
+    @import "search-prompt";
+    @import "awesome-menu";
+    @import "mini-player";
+    @import "disconnected";
+    @import "alfred";
+    @import "login-screen";
+    @import "settings-dropdown";
+    @import "preferences";
+    @import "settings-master";
+    @import "create-a-contact";
+    @import "edit-contact";
+  }
+
+  // include outside of wrapper imports
+  @import "chat-area";
+  @import "system-notifications";
+  @import "systray";
+  @import "context-menu";
+  @import "no-chat";
+  @import "dialpad";
+  @import "phase1";
+  @import "phase2";
+  @import "phase3";
+  @import "alfred-panels";
+}
+
+.dg {
+  display: none;
+}
+

@@ -1,0 +1,57 @@
+{% set args = { 'title': "#{ title }", 'body_class': "#{ body_class }" } %}
+
+  {% include "components/header.twig" with args %}
+
+  {% include "demo/control-panel.twig" %}
+
+  {% include 'demo/chat-area.twig' %}
+
+  {% include 'demo/system-notifications.twig' %}
+
+  {% include 'demo/systray.twig' %}
+
+  {% include 'demo/context-menu.twig' %}
+
+  {% include 'demo/dialpad.twig' %}
+
+  {% include 'demo/alfred-panels.twig' %}
+
+  <div class="wrapper">
+
+    {% include 'demo/status-bar.twig' %}
+
+    {% include 'demo/settings-dropdown.twig' %}
+
+    {% include 'demo/preferences.twig' %}
+
+    {% include 'demo/settings-master.twig' %}
+
+    {% include 'demo/login-screen.twig' %}
+
+  	{% include 'demo/now-playing.twig' %}
+
+    {% include 'demo/disconnected.twig' %}
+
+  	{% include 'demo/contact-list.twig' %}
+
+    {% include 'demo/notification-bar.twig' %}
+
+    {% include 'demo/phone-call-notification.twig' %}
+
+    {% include 'demo/broadcasts.twig' %}
+
+    {% include 'demo/create-a-group.twig' %}
+
+    {% include 'demo/create-a-contact.twig' %}
+
+    {% include 'demo/edit-contact.twig' %}
+
+    {% include 'demo/search-results.twig' %}
+
+    {% include 'demo/search-panel.twig' %}
+
+    {% include 'demo/command-line.twig' %}
+
+  </div>
+
+  {% include "components/footer.twig" %}

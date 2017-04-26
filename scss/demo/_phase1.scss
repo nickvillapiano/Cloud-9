@@ -1,0 +1,47 @@
+// _phase1.scss
+
+&.phase1 {
+
+    .wrapper {
+
+        .contact-list {
+
+            #contact-list-ul {
+
+                li {
+
+                    &.pbx {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .command-line {
+
+            .input-wrapper {
+
+                .dialpad-control {
+                    display: none;
+                }
+            }
+
+            .tooltips {
+
+                &.slide-more {
+                    top: -4rem;
+                }
+            }
+        }
+    }
+
+    .system-notifications {
+
+        .system-notification-micro {
+
+            &.phone-call {
+                display: none;
+            }
+        }
+    }
+}

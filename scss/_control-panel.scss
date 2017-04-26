@@ -1,0 +1,19 @@
+//_control-panel.scss
+
+.control-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $light-grey;
+    color: $black;
+    padding: 1rem 1rem 0;
+    font-size: 0.9rem;
+
+    div {
+        margin: 0 0 1rem 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

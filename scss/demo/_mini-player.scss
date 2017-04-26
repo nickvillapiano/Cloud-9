@@ -1,0 +1,22 @@
+// _mini-player.scss
+
+.contact-list {
+
+    &.mini-player {
+        height: 0;
+    }
+}
+
+.command-line {
+
+    &.mini-player {
+
+        .input-wrapper {
+            width: calc(100% - 5.2rem);
+        }
+
+        .views-controls {
+            width: 0;
+        }
+    }
+}

@@ -1,0 +1,575 @@
+// _system-notifications.scss
+
+.system-notifications {
+    position: absolute;
+    width: 37.5rem;
+    height: 8rem;
+    bottom: 2rem;
+    right: 5rem;
+    transform: translateX(100%) translateX(5rem);
+    transition: all 0.5s;
+
+    &.slide-in {
+        transform: translateX(0);
+    }
+
+    &.show-all {
+
+        .system-notification-micro {
+
+            &.text {
+                opacity: 1;
+            }
+
+            &.quickcall {
+                opacity: 1;
+            }
+
+            &.phone-call {
+                opacity: 1;
+            }
+
+            &.group {
+                opacity: 1;
+            }
+
+            &.disconnected {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.focus {
+
+        .system-notification-micro {
+
+            .notification-area {
+                padding: 0.75rem 2rem 0.75rem 1rem;
+
+                .icon {
+                    padding: 0.4rem 0.6rem;
+
+                    svg {
+                        width: 1.3rem;
+                    }
+                }
+
+                .controls {
+                    margin: 0.2rem 0 0 0;
+                }
+            }
+
+            .quick-reply {
+
+                input {
+                    font-size: 1.3rem;
+                    padding: 1rem;
+                }
+            }
+
+            &.text {
+
+                .notification-area {
+                    padding: 0.55rem 2rem 0.55rem 1rem
+                }
+            }
+        }
+    }
+
+    .system-notification-micro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: opacity 0.3s;
+
+        .close {
+            position: absolute;
+            top: -0.6rem;
+            right: -0.6rem;
+            background: $grey;
+            padding: 0.3rem 0.4rem 0.2rem 0.4rem;
+            border-radius: 50%;
+
+            &:hover {
+                cursor: pointer;
+
+                svg {
+
+                    .st0 {
+                        stroke: $select-green;
+                    }
+                }
+            }
+
+            svg {
+                width: 0.8rem;
+
+                .st0 {
+                    fill: none;
+                    stroke: $white;
+                    stroke-width: 30;
+                    stroke-miterlimit: 10;
+                    transition: all 0.3s;
+                }
+            }
+        }
+
+        .notification-area {
+            padding: 1.2rem 2rem 1.2rem 1rem;
+            border-bottom: 0.1rem solid $grey;
+            transition: padding 0.2s;
+
+            & > div {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .icon {
+                padding: 0.5rem 0.7rem;
+                background: $grey;
+                transition: padding 0.2s;
+
+                svg {
+                    width: 1.6rem;
+                    transition: width 0.2s;
+
+                    .st0 {
+                        fill: $white ;
+                        stroke: $white;
+                        stroke-width: 25;
+                        stroke-miterlimit: 10;
+                    }
+                }
+            }
+
+            .meta {
+                text-transform: uppercase;
+                margin: 0.1rem 0 0 0.7rem;
+
+                .name {
+                    font-size: 1.6rem;
+                    display: inline-block;
+                    vertical-align: bottom;
+                }
+
+                .company {
+                    font-size: 1rem;
+                    display: inline-block;
+                    width: 5rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .text-message {
+                    display: none;
+                    font-style: italic;
+                    font-size: 1.2rem;
+                    text-transform: none;
+                }
+
+                .group-message {
+                    display: none;
+                    font-size: 1.4rem;
+                }
+
+                .disconnected-message {
+                    display: none;
+                    font-size: 1.4rem;
+                }
+            }
+
+            .controls {
+                float: right;
+                margin: 0.5rem 0 0 0;
+                transition: margin 0.2s;
+
+                svg {
+                    height: 2rem;
+
+                    .st0 {
+                        transition: all 0.3s;
+                    }
+
+                    .st1 {
+                        transition: all 0.3s;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &#quick-call {
+
+                        .st0 {
+                            stroke-width: 2.5;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                            stroke-miterlimit: 10;
+                            stroke: $light-blue;
+                            fill: $light-blue;
+                        }
+
+                        .st1 {
+                            stroke-miterlimit: 10;
+                            stroke: $light-blue;
+                            fill: $light-blue;
+                            stroke-width: 2;
+                        }
+
+                        &:hover {
+
+                            .st0 {
+                                stroke: $select-green;
+                                fill: $select-green;
+                            }
+
+                            .st1 {
+                                stroke: $select-green;
+                                fill: $select-green;
+                            }
+                        }
+                    }
+
+                    &#call {
+                        transform: rotate(135deg);
+                        margin: 0 2.5rem;
+                        position: relative;
+                        top: 0.2rem;
+
+                        .st0 {
+                            stroke-width: 2.5;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                            stroke-miterlimit: 10;
+                            stroke: $red;
+                            fill: $red;
+                        }
+
+                        .st1 {
+                            display: none;
+                        }
+
+                        &:hover {
+
+                            .st0 {
+                                stroke: $select-green;
+                                fill: $select-green;
+                            }
+
+                            .st1 {
+                                stroke: $select-green;
+                                fill: $select-green;
+                            }
+                        }
+                    }
+
+                    &#chat {
+
+                        .st0 {
+                            stroke-width: 1;
+                            stroke-miterlimit: 10;
+                        }
+
+                        &:hover {
+
+                            .st0 {
+                                stroke: $select-green;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .quick-reply {
+            padding: 0.5rem 1rem;
+            position: relative;
+
+            input {
+                border: none;
+                background: $grey;
+                width: 100%;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                transition: font-size 0.2s, padding 0.2s;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::-webkit-input-placeholder {
+                    color: $medium-grey;
+                    text-transform: uppercase;
+                }
+
+                &.show-send {
+
+                    & + .send {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .send {
+                opacity: 1;
+                font-size: 1.2rem;
+                @include apercu-bold;
+                position: absolute;
+                top: 1.6rem;
+                right: 1.9rem;
+                text-transform: uppercase;
+                opacity: 0;
+                transition: opacity 0.3s;
+
+                &:hover {
+                    color: $select-green;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &.call {
+            background: $purple;
+
+            .notification-area {
+
+                .controls {
+
+                    svg {
+
+                        &#quick-call {
+
+                            .st1 {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.quickcall {
+            background: $hot-blue;
+            top: -10rem;
+            opacity: 0;
+
+            .notification-area {
+
+                .meta {
+
+                    .company {
+                        width: 10rem;
+                    }
+                }
+
+                .controls {
+
+                    svg {
+
+                        &#quick-call {
+                            margin-right: 2rem;
+                        }
+
+                        &#call {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.phone-call {
+            background: $purple;
+            top: -50rem;
+            opacity: 0;
+
+            .notification-area {
+                border: none;
+                height: 8.6rem;
+                padding: 1.8rem 1rem;
+
+                .meta {
+
+                    .company {
+                        width: 19rem;
+                        //
+                        display: block;
+                    }
+                }
+
+                .icon {
+                    padding: 0.75rem 1rem;
+
+                    svg {
+                        width: 2.5rem;
+                    }
+                }
+
+                .controls {
+                    margin: 1.3rem 0 0 0;
+
+                    svg {
+                        // margin: 0 2.5rem;
+
+                        .st1 {
+                            display: none;
+                        }
+
+                        // &#call {
+                        //     display: none;
+                        // }
+
+                        &#chat {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .quick-reply {
+                display: none;
+            }
+        }
+
+        &.text {
+            background: $light-blue;
+            top: -20rem;
+            opacity: 0;
+
+            .notification-area {
+
+                .meta {
+
+                    .name {
+                        font-size: 1.2rem;
+                        @include apercu-bold;
+                    }
+
+                    .company {
+                        display: none;
+                    }
+
+                    .text-message {
+                        display: block;
+                    }
+                }
+
+                .controls {
+                    margin: 0.5rem 0 0 0;
+
+                    #quick-call {
+                        display: none;
+                    }
+
+                    #call {
+                        display: none;
+                    }
+
+                    #chat {
+
+                    }
+                }
+            }
+        }
+
+        &.group {
+            background: $active-grey-1;
+            height: 8.6rem;
+            top: -30rem;
+            opacity: 0;
+
+            .notification-area {
+                padding: 1.8rem 1rem;
+                border: none;
+
+                .icon {
+                    padding: 0.75rem 1rem;
+
+                    svg {
+                        width: 2.5rem;
+                    }
+                }
+
+                .meta {
+
+                    .name {
+                        display: none;
+                    }
+
+                    .company {
+                        display: none;
+                    }
+
+                    .text-message {
+                        display: none;
+                    }
+
+                    .group-message {
+                        display: inline-block;
+                    }
+                }
+
+                .controls {
+                    display: none;
+                }
+            }
+
+            .quick-reply {
+                display: none;
+            }
+        }
+
+        &.disconnected {
+            background: $cool-pink;
+            height: 8.6rem;
+            top: -40rem;
+            opacity: 0;
+
+            .notification-area {
+                padding: 1.8rem 1rem;
+                border: none;
+
+                .icon {
+                    padding: 0.75rem 1rem;
+
+                    svg {
+                        width: 2.5rem;
+                    }
+                }
+
+                .meta {
+
+                    .name {
+                        display: none;
+                    }
+
+                    .company {
+                        display: none;
+                    }
+
+                    .text-message {
+                        display: none;
+                    }
+
+                    .group-message {
+                        display: none;
+                    }
+
+                    .disconnected-message {
+                        display: block;
+                    }
+                }
+
+                .controls {
+                    display: none;
+                }
+            }
+
+            .quick-reply {
+                display: none;
+            }
+        }
+    }
+}

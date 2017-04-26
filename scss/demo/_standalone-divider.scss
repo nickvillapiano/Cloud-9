@@ -1,0 +1,31 @@
+// _standalone-divider.scss
+
+.standalone-divider {
+    height: 1.5rem;
+    background: $black;
+    padding: 0;
+    position: relative;
+    height: 0.9rem;
+    margin-top: -0.1rem;
+
+    // .hr {
+    //  width: 100%;
+    //  height: 0.1rem;
+    //  background: $normal-grey-2;
+    //  position: relative;
+    //  top: 50%;
+    //  left: 0;
+    //  transform: translateY(-50%);
+    //  margin-bottom: 0.1rem;
+
+    //  & + .hr {
+    //      margin-bottom: 0;
+    //  }
+    // }
+
+    .dash-line {
+        background: $grey url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==') repeat;
+        height: 0.3rem;
+        margin: 0.3rem 0;
+    }
+}

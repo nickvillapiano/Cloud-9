@@ -1,0 +1,105 @@
+// _conversation-line-item.scss
+
+.line-item {
+    // margin: 1.5rem 0 0 3rem;
+    position: relative;
+    //
+    margin: 1.5rem 0 0 0;
+
+
+    header {
+        margin: 0 0 0.2rem 0;
+        display: flex;
+        // justify-content: space-between;
+        align-items: flex-end;
+
+        .first-name {
+            text-transform: uppercase;
+            @include apercu-bold;
+            font-size: 1.2rem;
+            // display: none;
+        }
+
+        .timestamp {
+            text-transform: uppercase;
+            color: $dark-beige;
+            font-size: 1.2rem;
+            @include apercu-regular;
+            margin-left: 0.5rem;
+        }
+    }
+
+    .message {
+        letter-spacing: 0;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+    }
+
+    footer {
+
+        .timestamp {
+            text-transform: uppercase;
+            color: $dark-beige;
+            font-size: 1rem;
+        }
+    }
+
+    &.you {
+
+        header {
+
+            .first-name {
+                color: $light-blue;
+            }
+        }
+
+        // &:before {
+        //     content: 'RT';
+        //     position: absolute;
+        //     top: 0.3rem;
+        //     left: -3.4rem;
+        //     /* transform: translateY(-50%); */
+        //     background: $light-blue;
+        //     width: 2.5rem;
+        //     height: 2.5rem;
+        //     border-radius: 50%;
+        //     padding: 0.6rem;
+        //     color: #ffffff;
+        //     @include apercu-bold;
+        //     font-style: normal;
+        //     font-weight: 700;
+        // }
+    }
+
+    &.me {
+        // margin: 1.5rem 0 0 1rem;
+
+        header {
+
+            .first-name {
+                color: $medium-grey;
+            }
+        }
+
+        .message {
+            color: $light-grey;
+        }
+
+        // &:before {
+        //     content: 'JK';
+        //     position: absolute;
+        //     top: 0.3rem;
+        //     left: -3.4rem;
+        //     /* transform: translateY(-50%); */
+        //     background: $active-grey-2;
+        //     width: 2.5rem;
+        //     height: 2.5rem;
+        //     border-radius: 50%;
+        //     padding: 0.6rem;
+        //     color: #ffffff;
+        //     @include apercu-bold;
+        //     font-style: normal;
+        //     font-weight: 700;
+        // }
+    }
+}

@@ -1,0 +1,42 @@
+// _alfred.scss
+
+&.alfred {
+    height: auto;
+    margin-top: 0;
+    top: calc(50vh - 10rem);
+    z-index: 1;
+
+    .status-bar {
+        display: none;
+    }
+
+    .broadcasts {
+        display: none;
+    }
+
+    .command-line {
+        margin-top: -3.2rem;
+    }
+
+    .command-line {
+
+        .panel1 {
+            display: none;
+        }
+
+        .panel2 {
+            display: none;
+        }
+
+        .panel3 {
+            display: none;
+        }
+    }
+
+    .search-panel {
+
+        &.show {
+            display: none;
+        }
+    }
+}

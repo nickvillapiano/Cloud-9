@@ -1,0 +1,876 @@
+// _contact-tile-wrapped.scss
+
+.contact-list {
+
+    #contact-list-ul {
+
+        li {
+
+            .wrapped {
+                transition: all 0.3s;
+
+                .quick-reply-trigger {
+                    position: absolute;
+                    top: 0;
+                    left: -3.2rem;
+                    width: 2.5rem;
+                    height: 6.3rem;
+                    background: $light-blue;
+                    border-right: 0.1rem solid $black;
+                    transition: all 0.3s;
+
+                    &:after {
+                        content: '';
+                        width: 1rem;
+                        height: 1rem;
+                        display: block;
+                        position: absolute;
+                        top: 2.1rem;
+                        right: -0.6rem;
+                        transform: rotate(45deg);
+                        background: $light-blue;
+                        border-top: 0.1rem solid $black;
+                        border-right: 0.1rem solid $black;
+                        transition: opacity 0.2s;
+                        //
+                        opacity: 0;
+                    }
+
+                    svg {
+                        width: 1rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        transition: opacity 0.2s;
+
+                        //
+                        opacity: 0;
+
+                        .st0 {
+                            fill: $white;
+                            stroke: $white;
+                        }
+                    }
+                }
+
+                .availability {
+                    float: left;
+                    width: 0.4rem;
+                    height: 3rem;
+                    background: $black;
+                    margin: 0.1rem 0 0 -1rem;
+                    position: relative;
+                    overflow: hidden;
+                    //
+                    opacity: 0;
+                    transition: opacity 0.2s;
+
+                    .bar-lines {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0.4rem;
+                        height: 3rem;
+                        background-color: transparent;
+                        z-index: 2;
+
+                        div {
+                            background-color: $black;
+                            width: 0.4rem;
+                            height: 0.1rem;
+                            position: relative;
+                            z-index: 2;
+                            margin-bottom: 0.3rem;
+                            //
+                            margin-bottom: 0.4rem;
+                            top: -0.1rem;
+                            //
+                            background-color: $grey;
+                        }
+                    }
+
+                    .volume-bar {
+                        background-color: $black;
+                        width: 0.4rem;
+                        height: 3rem;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+
+                .grabber {
+                    display: none;
+                }
+
+                .meta {
+                    float: left;
+                    position: relative;
+                    width: 100%;
+                    text-transform: uppercase;
+                    margin: 0 0 0 0.5rem;
+
+                    .contact-name {
+                        color: $white;
+                        font-size: 1.6rem;
+                    }
+
+                    .contact-status {
+                        color: $light-grey;
+                        font-size: 1rem;
+                        margin: 0.1rem 0 0;
+                        position: relative;
+
+                        span {
+                            position: absolute;
+
+                            &.company-name {
+                                opacity: 1;
+                                transition: opacity 0.3s;
+                            }
+
+                            &.text-message-copy {
+                                opacity: 0;
+                                transition: opacity 0.3s;
+                                transition-delay: 0.3s;
+                                text-transform: none;
+                                //font-style: italic;
+                                transform: skewX(-9deg) translateX(0.2rem);
+                            }
+                        }
+                    }
+
+                    .action-buttons {
+                        transition: all 0.15s;
+                        opacity: 1;
+                    }
+
+
+                    .chat-button {
+                        position: absolute;
+                        top: -1.5rem;
+                        right: 6.5rem;
+                        height: 6.2rem;
+
+                        svg {
+                            position: relative;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            height: 2rem;
+
+                            &:hover {
+
+                                .st0 {
+                                    stroke: $select-green;
+                                }
+
+                                .st1 {
+                                    fill: $select-green;
+                                }
+                            }
+
+                            .st0 {
+                                // transition: stroke 0.3s;
+                                stroke: $white;
+                                fill: transparent;
+                                stroke-width: 2.5;
+                                //
+                                transition: all 0.3s;
+                            }
+
+                            .st1 {
+                                stroke: $white;
+                                fill: $white;
+                                //
+                                stroke: none;
+                                //
+                                transition: all 0.3s;
+                            }
+                        }
+
+                        .favorite {
+                            display: none;
+                        }
+
+                        &.phone {
+
+                            .st0 {
+                                fill: none;
+                                stroke: $white;
+                                stroke-miterlimit: 10;
+                            }
+                        }
+                    }
+
+                    .text-button {
+                        @extend .chat-button;
+                        right: 0rem;
+                        padding: 0 1.5rem 0 0;
+                        border-left: 1px solid $black;
+
+                        &:hover {
+
+                            svg {
+
+                                .st0 {
+                                    stroke: $select-green;
+                                }
+
+                                .st1 {
+                                    fill: $select-green;
+                                }
+                            }
+                        }
+
+                        svg {
+                            margin: 0 0 0 1.5rem;
+
+                            .st0 {
+                                stroke-width: 1;
+                                transition: all 0.3s;
+                            }
+                        }
+
+                        &.do-hover {
+
+                            svg {
+
+                                .st0 {
+                                    stroke: $select-green !important;
+                                }
+                            }
+                        }
+
+                        .settings-icon {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 0.6rem;
+                    height: 6.3rem;
+                    position: absolute;
+                    top: 0;
+                    left: -0.6rem;
+                    background: $light-blue;
+                    transition: all 0.3s;
+                    border-right: 0.1rem solid $black;
+                }
+            }
+
+            &.shouting {
+                background: $active-gradient;
+
+                .availability {
+                    opacity: 1;
+
+                    .bar-lines {
+
+                        div {
+                            background: $black;
+                        }
+                    }
+
+                    .volume-bar {
+                        background-color: $green;
+                        animation: voiceBarAnimation 1s linear infinite;
+                    }
+                }
+
+                .meta {
+
+                    .chat-button {
+
+                        svg {
+
+                            .st0 {
+                                stroke: $green;
+                            }
+
+                            .st1 {
+                                fill: $select-green;
+                            }
+                        }
+                    }
+
+                    .text-button {
+                        background: linear-gradient(180deg, $normal-grey-1 0%, $normal-grey-middle 19%, $normal-grey-2 108%);
+
+                        svg {
+
+                            .st0 {
+                                stroke: $white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.unavailable {
+                background: $dark-grey;
+
+                .meta {
+
+                    .contact-name {
+                        color: $dark-beige;
+                    }
+
+                    .contact-status {
+                        color: $dark-beige;
+                    }
+
+                    .chat-button {
+
+                        svg {
+
+                            .st0 {
+                                stroke: $black;
+                                fill: $black;
+                            }
+
+                            .st1 {
+                                fill: $black;
+                                stroke: $black;
+                                //
+                                stroke-width: 2;
+                            }
+                        }
+                    }
+
+                    .text-button {
+
+                        svg {
+
+                            .st0 {
+                                stroke: $white;
+                                fill: none;
+                            }
+                        }
+                    }
+                }
+
+                &.no-hover {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .chat-button {
+
+                                svg {
+
+                                    .st0 {
+                                        stroke: $black;
+                                    }
+
+                                    .st1 {
+                                        fill: $black;
+                                    }
+                                }
+                            }
+
+                            .text-button {
+
+                                svg {
+
+                                    .st0 {
+                                        stroke: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.busy-person {
+
+                .meta {
+
+                    .chat-button {
+
+                        svg {
+
+                            .st0 {
+                                stroke: $almost-black;
+                                fill: $almost-black;
+                            }
+
+                            .st1 {
+                                stroke: $almost-black;
+                                // stroke-width: 2;
+                                fill: $almost-black;
+                                //
+                                stroke-width: 2;
+                            }
+                        }
+                    }
+
+                    .text-button {
+
+                        svg {
+
+                            .st0 {
+                                stroke: $white;
+                                fill: none;
+                            }
+                        }
+                    }
+                }
+
+                &.no-hover {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .chat-button {
+
+                                svg {
+
+                                    .st0 {
+                                        stroke: $black;
+                                    }
+
+                                    .st1 {
+                                        fill: $black;
+                                    }
+                                }
+                            }
+
+                            .text-button {
+
+                                svg {
+
+                                    .st0 {
+                                        stroke: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.on-a-call {
+
+                &.no-hover {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .chat-button {
+
+                                svg {
+
+                                    .st0 {
+                                        stroke: $white;
+                                    }
+
+                                    .st1 {
+                                        fill: $black;
+                                    }
+                                }
+                            }
+
+                            .text-button {
+
+                                svg {
+
+                                    .st0 {
+                                        stroke: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.messages-waiting {
+
+                .meta {
+
+                    .contact-status {
+
+                        span {
+
+                            &.company-name {
+                                opacity: 0;
+                            }
+
+                            &.text-message-copy {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .text-button {
+
+                        svg {
+
+                            .st0 {
+                                stroke: $light-blue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.reorder-state {
+                cursor: -webkit-grabbing;
+
+                &:hover {
+                    cursor: -webkit-grab;
+
+                    .wrapped {
+
+                        .meta {
+
+                            .action-buttons {
+
+                                .chat-button {
+
+                                    .favorite {
+
+                                        .st0 {
+                                            stroke: $select-green;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:focus {
+                    cursor: -webkit-grabbing;
+                }
+
+                &.no-hover {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .action-buttons {
+
+                                .chat-button {
+
+                                    .favorite {
+
+                                        .st0 {
+                                            stroke: $white !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .wrapped {
+
+                    .grabber {
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 1.3rem;
+                        transform: translateY(-50%);
+
+                        svg {
+                            width: 1.3rem;
+
+                            .st0 {
+                                fill: none;
+                                stroke: $white;
+                                stroke-width: 1.5;
+                            }
+                        }
+
+                        &:hover {
+                            cursor: -webkit-grab;
+                        }
+                    }
+
+                    .meta {
+                        margin: 0 0 0 1.8rem;
+
+                        .action-buttons {
+
+                            .chat-button {
+
+                                .shout-icon {
+                                    display: none;
+                                }
+
+                                .ring-icon {
+                                    display: none;
+                                }
+
+                                .favorite {
+                                    display: block;
+                                    margin-right: 1.3rem;
+                                    width: 2rem;
+
+                                    .st0 {
+                                        fill: none;
+                                        stroke: $white;
+                                        stroke-width: 1.5;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                        stroke-miterlimit: 10;
+                                    }
+                                }
+                            }
+
+                            .text-button {
+                                padding: 0 2.7rem 0 0;
+
+                                .text-icon {
+                                    display: none;
+                                }
+
+                                .settings-icon {
+                                    display: block;
+
+                                    .st0 {
+                                        stroke: $white;
+                                        stroke-width: 3;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.pbx {
+
+                .wrapped {
+
+                    .meta {
+
+                        .chat-button {
+                            right: 1.5rem;
+
+                            svg {
+
+                                .st1 {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .text-button {
+                            border-left: 0.1rem solid transparent;
+
+                            .text-icon {
+                                display: none;
+                            }
+
+                            #pencil {
+                                display: none;
+
+                                .st0 {
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd;
+                                    fill: white;
+                                    //
+                                    fill: none;
+                                    stroke: none;
+                                }
+
+                                .st1 {
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd;
+                                    fill: none;
+                                    stroke: $white;
+                                    stroke-width: 0.9077;
+                                    stroke-miterlimit: 10;
+                                    display: block;
+                                }
+
+                                .st2 {
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd;
+                                    fill: none;
+                                    stroke: $white;
+                                    stroke-width: 0.9077;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-miterlimit: 10;
+                                }
+
+                                .st4 {
+                                    fill: none;
+                                    stroke: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.reorder-state {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .action-buttons {
+
+                                .chat-button {
+                                    right: 6.5rem;
+                                }
+
+                                .text-button {
+                                    right: 0;
+                                    border-left: 0.1rem solid $black;
+                                    padding: 0 2.6rem 0 0;
+
+                                    .settings-icon {
+                                        display: none;
+                                    }
+
+                                    #pencil {
+                                        display: block;
+                                    }
+
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            &:nth-of-type(1) {
+
+                &.reorder-state {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .action-buttons {
+
+                                .chat-button {
+
+                                    .favorite {
+
+                                        .st0 {
+                                            stroke: $select-green;
+                                            fill: $select-green;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+
+                &.reorder-state {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .action-buttons {
+
+                                .chat-button {
+
+                                    .favorite {
+
+                                        .st0 {
+                                            stroke: $select-green;
+                                            fill: $select-green;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(3) {
+
+                &.reorder-state {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .action-buttons {
+
+                                .chat-button {
+
+                                    .favorite {
+
+                                        .st0 {
+                                            stroke: $select-green;
+                                            fill: $select-green;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.group-tile {
+
+                .wrapped {
+
+                    .meta {
+
+                        .action-buttons {
+
+                            .text-button {
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.no-hover {
+
+                .wrapped {
+
+                    .meta {
+
+                        .chat-button {
+
+                            svg {
+
+                                .st0 {
+                                    stroke: $white;
+                                }
+
+                                .st1 {
+                                    fill: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

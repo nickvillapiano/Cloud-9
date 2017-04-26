@@ -1,0 +1,310 @@
+// _edit-contact.scss
+
+.edit-contact {
+    position: absolute;
+    top: 3.6rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 8.5rem);
+    background: $black;
+    z-index: 5;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding: 1.8rem 2rem 2rem;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+
+    &.show {
+        opacity: 1;
+        z-index: 5;
+    }
+
+    .close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+
+        &:hover {
+            cursor: pointer;
+
+            svg {
+
+                .st0 {
+                    stroke: $select-green;
+                }
+            }
+        }
+
+        svg {
+            width: 0.8rem;
+
+            .st0 {
+                stroke-width: 30;
+            }
+
+            .st1 {
+
+            }
+        }
+    }
+
+    header {
+        text-align: center;
+        color: $white;
+        @include apercu-bold;
+        margin: 0 auto 1.5rem;
+
+        .sub-title {
+            @include apercu-regular;
+            color: $dark-beige;
+            font-size: 1rem;
+            margin: 0.5rem 0 0 0;
+            //
+            width: 90%;
+            margin: 0.5rem auto 2.5rem;
+        }
+    }
+
+    .group-name {
+
+        .title {
+            color: $medium-grey;
+            @include apercu-bold;
+            margin: 0 0 0.7rem;
+
+            span {
+                float: right;
+                font-size: 1rem;
+                @include apercu-regular;
+            }
+        }
+
+        .text-field {
+            margin: 0 0 1.8rem 0;
+
+            #group-name-input {
+                border: 0.1rem solid $medium-grey;
+                color: $white;
+                background: $black;
+                width: 100%;
+                font-size: 1.4rem;
+                padding: 1rem;
+                text-transform: uppercase;
+            }
+        }
+
+        &.phone-number {
+
+            .text-field {
+                position: relative;
+
+                #group-name-input {
+                    padding: 1rem 1rem 1rem 3.2rem;
+                }
+
+                .ghost {
+                    position: absolute;
+                    top: 50%;
+                    left: 1rem;
+                    transform: translateY(-50%);
+                    color: $dark-beige;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    .invite-members {
+        position: relative;
+
+        .title {
+            color: $medium-grey;
+            @include apercu-bold;
+            margin: 0 0 0.7rem;
+        }
+
+        .text-field {
+            border: 0.1rem solid $medium-grey;
+            padding: 0.4rem;
+            position: relative;
+
+            .selected-name {
+                color: $white;
+                background: $active-grey-1;
+                border-radius: 0.2rem;
+                display: inline-block;
+                padding: 0.6rem 1rem;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                svg {
+                    width: 0.8rem;
+                    margin:0 0 0 0.4rem;
+
+                    .st0 {
+                        fill: none;
+                        stroke: #fff;
+                        stroke-width: 30;
+                        stroke-miterlimit: 10;
+                        transition: all 0.3s;
+                    }
+
+                    &:hover {
+
+                        .st0 {
+                            stroke: $red;
+                        }
+                    }
+                }
+            }
+
+            .ch {
+                display: inline-block;
+                background: $black;
+                text-transform: none;
+                opacity: 0;
+
+                &.show {
+                    opacity: 1;
+                }
+            }
+
+            .search-icon {
+                position: absolute;
+                top: 0.9rem;
+                right: 1rem;
+
+                svg {
+                    width: 1.5rem;
+
+                    .st0 {
+                        fill: none;
+                        stroke: $white;
+                        stroke-width: 4;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                    }
+
+                    .st1 {
+                        fill: none;
+                        stroke: $white;
+                        stroke-width: 5;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                    }
+                }
+            }
+        }
+
+        .members-dropdown {
+            position: absolute;
+            top: 5.7rem;
+            left: 0;
+            background: $active-grey-1;
+            width: 100%;
+            padding: 0 0.5rem;
+            height: 0rem;
+            overflow: hidden;
+            transition: height 0.3s, padding 0.2s;
+
+            &.show {
+                height: 11.4rem;
+                padding: 0.5rem;
+            }
+
+            .name {
+                font-size: 1.4rem;
+                padding: 0.5rem;
+                transition: all 0.1s;
+
+                &:nth-of-type(1) {
+                    background: $select-green;
+                    color: $black;
+                    cursor: pointer;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .suggested {
+        opacity: 0;
+        transition: opacity 0.25s;
+
+        .title {
+            color: $medium-grey;
+            @include apercu-bold;
+            margin: 1.8rem 0 0.7rem;
+        }
+
+        .names {
+
+            .name {
+                font-size: 1.4rem;
+                margin: 0 0 0.5rem 0;
+                transition: color 0.3s;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 30rem;
+                color: $medium-grey;
+
+                span {
+                    font-size: 1rem;
+                }
+
+                &:hover {
+                    color: $select-green;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &.show {
+            opacity: 1;
+        }
+    }
+
+    .buttons {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 6rem;
+        left: 0;
+        //
+        position: relative;
+        top: 1.2rem;
+
+        .button {
+            padding: 1.5rem 2rem;
+            background: $grey;
+            display: inline-block;
+            transition: color 0.3s;
+            //
+            padding: 1.1rem 2rem;
+
+            &.cancel {
+                background: none;
+                display: block;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: $select-green;
+            }
+        }
+
+        footer {
+            font-size: 1rem;
+            color: $dark-beige;
+        }
+    }
+}

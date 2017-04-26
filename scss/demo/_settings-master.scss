@@ -1,0 +1,503 @@
+// _settings-master.scss
+
+.settings-master {
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    z-index: 6;
+    overflow-y: scroll;
+    background: $almost-black;
+    text-transform: uppercase;
+    // transform: translateX(0);
+    height: 67rem;
+
+    &.slide-in {
+        transform: translateX(0);
+    }
+
+    .header {
+        position: relative;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 0.2rem solid $active-grey-1;
+
+        .title {
+            font-size: 1.4rem;
+        }
+
+        .saved {
+            font-size: 1.2rem;
+            @include apercu-bold;
+            color: $select-green;
+            margin: 0.4rem 0 0 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+
+            &.show {
+                opacity: 1;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1rem;
+
+            svg {
+                width: 0.8rem;
+
+                .st0 {
+                    fill: none;
+                    stroke: $white;
+                    stroke-width: 30;
+                    stroke-miterlimit: 10;
+                    transition: all 0.2s;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                svg {
+
+                    .st0 {
+                        stroke: $select-green;
+                    }
+                }
+            }
+        }
+
+        .caret {
+            @extend .close;
+            right: initial;
+            left: 1rem;
+
+            svg {
+                transform: rotate(-90deg);
+
+                .st0 {
+                    fill: $white;
+                    transform: all 0.2s;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                svg {
+
+                    .st0 {
+                        fill: $select-green;
+                    }
+                }
+            }
+        }
+    }
+
+    .settings-block {
+        padding: 1.5rem;
+        position: relative;
+        border-bottom: 0.2rem solid $active-grey-1;
+
+        .title {
+            font-size: 1rem;
+            margin: 0 0 1.5rem 0;
+        }
+
+        &.main-radio-buttons {
+
+            form {
+
+                input {
+                    visibility: hidden;
+                    position: relative;
+                    display: block;
+                    margin: 0 0 5rem 0;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        visibility: visible;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        border: 0.2rem solid $almost-black;
+                        border-radius: 50%;
+                        background: $almost-black;
+                        padding: 0.1rem;
+                        box-shadow: 0 0 0 0.1rem $white;
+                    }
+
+                    &:checked {
+
+                        &:after {
+                            background: $select-green;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        margin: 0 0 4rem 0;
+                    }
+
+                    &:nth-of-type(3) {
+                        margin: 0 0 2.1rem 0;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .input-description-macro {
+                position: absolute;
+                top: 3.9rem;
+                left: 3.7rem;
+
+                .micro {
+                    margin: 0 0 1.4rem 0;
+
+                    .setting-title {
+                        font-size: 1.4rem;
+                    }
+
+                    .setting-label {
+                        font-size: 1rem;
+                        margin: 0.4rem 0 0 0;
+
+                        strong {
+                            @include apercu-bold;
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        margin: 1.8rem 0 0 0;
+                    }
+                }
+            }
+        }
+
+        &.complex-buttons {
+
+            .sounds-switch {
+                margin: -0.2rem 0 0.9rem 0;
+
+                img {
+                    width: 2.4rem;
+                }
+
+                span {
+                    font-size: 1.2rem;
+                    @include apercu-bold;
+                    position: relative;
+                    top: -0.2rem;
+                    left: 0.8rem;
+                }
+            }
+
+            .radio-group {
+                margin: 0 0 0.5rem 0;
+
+                .radio-title {
+                    font-size: 1.4rem;
+                    margin: 0 0 0.7rem 0;
+                }
+            }
+
+            .radio-buttons {
+
+                .line-item {
+                    display: inline-block;
+                    width: 49%;
+                    margin: 0 0 1rem 0;
+
+                    input {
+                        visibility: hidden;
+                        position: relative;
+                        display: inline-block;
+                        // margin: 0 0 5rem 0;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            visibility: visible;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 1rem;
+                            height: 1rem;
+                            border: 0.2rem solid $almost-black;
+                            border-radius: 50%;
+                            background: $almost-black;
+                            padding: 0.1rem;
+                            box-shadow: 0 0 0 0.1rem $white;
+                        }
+
+                        &:checked {
+
+                            &:after {
+                                background: $select-green;
+                            }
+
+                            label {
+                                @include apercu-bold;
+                            }
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    label {
+                        display: inline-block;
+                        margin: 0 0 0 0.2rem;
+                    }
+                }
+            }
+
+            .input-description-macro {
+                position: absolute;
+                top: 3.9rem;
+                left: 3.7rem;
+
+                .micro {
+                    margin: 0 0 1.4rem 0;
+
+                    .setting-title {
+                        font-size: 1.4rem;
+                    }
+
+                    .setting-label {
+                        font-size: 1rem;
+                        margin: 0.4rem 0 0 0;
+
+                        strong {
+                            @include apercu-bold;
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        margin: 1.8rem 0 0 0;
+                    }
+                }
+            }
+
+            .simple-drop-down {
+                position: relative;
+
+                .heading {
+                    font-size: 1.2rem;
+                    @include apercu-bold;
+                }
+
+                .drop-down-macro {
+                    font-size: 1.2rem;
+                    width: 21rem;
+                    margin: 0.7rem 0 0 0;
+
+                    .trigger {
+                        position: relative;
+                        border: 0.1rem solid $medium-grey;
+                        padding: 1rem;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        svg {
+                            width: 1rem;
+                            transform: rotate(180deg);
+                            position: absolute;
+                            top: 1.2rem;
+                            right: 1.2rem;
+
+                            .st0 {
+                                fill: $white;
+                                stroke: $white;
+                            }
+                        }
+                    }
+
+                    .drop-down-micro {
+                        margin: 0.2rem 0 0 0;
+                        background: $active-grey-1;
+                        overflow: hidden;
+                        height: 0;
+                        position: absolute;
+                        z-index: 2;
+                        width: 21rem;
+                        top: 5.7rem;
+                        transition: all 0.3s;
+
+                        .line-item {
+                            padding: 1rem 0.5rem;
+                            margin: 0.5rem 0.5rem 0 0.5rem;
+
+                            &:nth-of-type(3) {
+                                margin: 0rem 0.5rem 0.5rem 0.5rem;
+                            }
+
+                            &:hover {
+                                background: $select-green;
+                                color: $black;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    &.expand {
+
+                        .trigger {
+
+                            svg {
+
+                                .st0 {
+                                    fill: $select-green;
+                                    stroke: $select-green;
+                                }
+                            }
+                        }
+
+                        .drop-down-micro {
+                            height: 11.7rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.checkboxes {
+            border-bottom: none;
+
+            form {
+
+                input {
+                    visibility: hidden;
+                    position: relative;
+                    display: block;
+                    margin: 0 0 1.9rem 0;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        visibility: visible;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        border: 0.2rem solid $almost-black;
+                        // border-radius: 50%;
+                        background: $almost-black;
+                        padding: 0.1rem;
+                        box-shadow: 0 0 0 0.1rem $white;
+                    }
+
+                    &:checked {
+
+                        &:after {
+                            background: url('../images/check.svg') center center no-repeat;
+                            background-size: cover;
+                        }
+                    }
+
+                    &:nth-of-type(1) {
+                        margin: 0 0 3.7rem 0;
+                    }
+
+                    &:nth-of-type(2) {
+                        margin: -0.4rem 0 3.6rem 0;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &.disabled {
+
+                        &:after {
+                            box-shadow: 0 0 0 0.1rem $dark-beige;
+                        }
+
+                        &:checked {
+
+                            &:after {
+                                background: url('../images/check-disabled.svg') center center no-repeat;
+                                background-size: cover;
+                            }
+                        }
+
+                        &:hover {
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+            }
+
+            .input-description-macro {
+                position: absolute;
+                top: 3.9rem;
+                left: 3.7rem;
+
+                .micro {
+                    margin: 0 0 1.4rem 0;
+
+                    .setting-title {
+                        font-size: 1.2rem;
+                        @include apercu-bold;
+
+                        svg {
+                            width: 0.8rem;
+                            display: inline-block;
+
+                            .st0 {
+                                fill: $dark-beige;
+                                stroke: none;
+                            }
+
+                            .st1 {
+                                fill: none;
+                                stroke: $dark-beige;
+                                stroke-width: 8;
+                                stroke-miterlimit: 10;
+                            }
+                        }
+
+                        input {
+                            display: inline-block;
+                            background: $almost-black;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            border-bottom: 0.1rem solid $white;
+                            width: 2rem;
+                            text-align: center;
+                            color: $select-green;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        margin: 1.8rem 0 0 0;
+                    }
+
+                    &.disabled {
+                        color: $dark-beige;
+
+                        &:hover {
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

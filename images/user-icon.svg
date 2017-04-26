@@ -1,0 +1,16 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 76.6 99.8" style="enable-background:new 0 0 76.6 99.8;" xml:space="preserve">
+    <style type="text/css">
+    	.st0 {
+            fill: #231F20;
+            stroke: #231F20;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    </style>
+    <path class="st0" d="M38.4,60.2L38.4,60.2c-13.8,0-25-11.2-25-25v-7c0-13.7,11.2-25,25-25h0c13.7,0,25,11.2,25,25v7
+    	C63.4,49,52.2,60.2,38.4,60.2z"/>
+    <path class="st0" d="M73.6,96.7V80.2c0-11-13.2-18.1-20-20c-6.8-1.9-15.2-10-15.2-10s-6.8,7.9-15.2,10c-8.4,2.1-20,9-20,20v16.4
+    	H73.6z"/>
+</svg>

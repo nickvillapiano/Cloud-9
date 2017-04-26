@@ -1,0 +1,280 @@
+// _no-chat.scss
+
+
+&.no-chat {
+
+    .wrapper {
+
+        .now-playing {
+
+            .line-item {
+
+                &.no-answer {
+
+                    .main {
+
+                        .contact-information {
+                            margin: 3rem 0 0 0;
+                        }
+
+                        .message-reply-trigger {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-list {
+
+            #contact-list-ul {
+
+                li {
+
+                    .wrapped {
+
+                        .meta {
+
+                            .chat-button {
+                                right: 2.5rem;
+                            }
+
+                            .text-button {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .notification-bar {
+
+            .macro {
+
+                &.notification {
+
+                    .chat-trigger {
+                        display: none;
+                    }
+
+                    &.phone {
+
+                        .call-controls {
+                            margin: 0 1rem 0 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .awesome-menu {
+
+            .line-item {
+
+                &.message {
+                    display: none;
+                }
+            }
+        }
+
+        #call-history {
+
+            li {
+
+                .line-item {
+                    position: relative;
+                    transition: transform 0.3s;
+
+                    .meta {
+                        margin: 0 0 0 1rem;
+                    }
+
+                    .separator {
+                        position: absolute;
+                        top: -0.1rem;
+                        right: 0;
+                        width: 0.1rem;
+                        height: 4.8rem;
+                        background: $black;
+                        transition: right 0.3s;
+                    }
+
+                    .call-respond {
+                        padding: 0 2rem 0 2rem;
+                        margin: 0 -6rem 0 0;
+                        transition: margin 0.3s;
+
+                        svg {
+                            width: 2rem;
+
+                            .st0 {
+                            stroke: $white;
+                            fill: transparent;
+                            stroke-width: 2.5;
+                            }
+
+                            .st1 {
+                                stroke: $white;
+                                fill: $white;
+                                stroke: none;
+                            }
+                        }
+                    }
+                }
+
+                .panel-wrapper {
+
+                    .controls {
+                        display: none;
+                    }
+                }
+
+                &.open {
+
+                    .line-item {
+                        // transform: translateX(-3rem);
+                        margin: 0 3rem 0 0;
+
+                        .time {
+                            opacity: 1;
+                            transform: none;
+                        }
+                    }
+
+                    .panel-wrapper {
+                        height: 0;
+                        border-top: 0.1rem solid transparent;
+                    }
+
+                    .separator {
+                        right: 3rem;
+                    }
+
+                    .call-respond {
+                        margin: 0 -3rem 0 0;
+                    }
+                }
+
+                &.conversation {
+
+                    &.open {
+
+                        .panel-wrapper {
+                            height: 9.7rem;
+                            border-top: 0.1rem solid $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .system-notifications {
+
+        &.show-all {
+
+            .system-notification-micro {
+
+                &.group {
+                    top: -20rem;
+                }
+
+                &.disconnected {
+                    top: -30rem;
+                }
+
+                &.text {
+                    display: none;
+                }
+
+                &.quickcall {
+
+                    .notification-area {
+                        border: none;
+                        height: 8.6rem;
+                        padding: 1.8rem 1rem;
+
+                        .icon {
+                            padding: 0.75rem 1rem;
+
+                            svg {
+                                width: 2.5rem;
+                            }
+                        }
+
+                        .meta {
+
+                            .company {
+                                display: block;
+                                width: 24rem;
+                            }
+                        }
+
+                        .controls {
+                            margin: 1.3rem 0 0 0;
+
+                            svg {
+
+                                &#chat {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .quick-reply {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .system-notification-micro {
+
+            &.call {
+
+                .notification-area {
+                    border: none;
+                    height: 8.6rem;
+                    padding: 1.8rem 1rem;
+
+                    .meta {
+
+                        .company {
+                            display: block;
+                            width: 18rem;
+                        }
+                    }
+
+                    .icon {
+                        padding: 0.75rem 1rem;
+
+                        svg {
+                            width: 2.5rem;
+                        }
+                    }
+
+                    .controls {
+                        margin: 1.3rem 0 0 0;
+
+                        svg {
+
+                            &#chat {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .quick-reply {
+                    display: none;
+                }
+            }
+
+            &.phone-call {
+                top: -40rem;
+            }
+        }
+    }
+}

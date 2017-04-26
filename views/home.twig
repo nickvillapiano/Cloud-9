@@ -1,0 +1,18 @@
+{% set args = { 'title': "#{ title }", 'body_class': "#{ body_class }" } %}
+
+
+<div class="container">
+  <h1>Cloud 9</h1>
+  {% include "components/header.twig" with args %}
+
+  <div class="contacts">
+
+    {# <div class="c9-button available" data-click-action="shout" data-dblclick-action="away">Jimmy Page</div>
+    <div class="c9-button available" data-click-action="shout" data-dblclick-action="away">Robert Plant</div>
+    <div class="c9-button available" data-click-action="shout" data-dblclick-action="away">John Paul Jones</div>
+    <div class="c9-button away" data-click-action="shout" data-dblclick-action="away">John Bonham</div> #}
+
+  </div>
+  {% include "components/footer.twig" %}
+</div>
+

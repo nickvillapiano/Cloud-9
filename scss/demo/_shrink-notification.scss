@@ -1,0 +1,52 @@
+// _shrink-notification.scss
+
+.contact-list {
+
+    ul {
+
+        li {
+
+            // &.shrink-notification {
+            //     position: relative;
+
+            //     .wrapped {
+            //         margin-left: 0.6rem;
+
+            //         &:before {
+            //             left: 0;
+            //         }
+            //     }
+            // }
+
+            &.shrink-notification {
+
+                .quick-reply-trigger {
+                    left: -1.9rem !important;
+
+                    svg {
+                        opacity: 0;
+                    }
+
+                    &:after {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            &.quick-reply-notification {
+                position: relative;
+
+                .wrapped {
+                    margin-left: 1.6rem;
+
+                    .quick-reply-trigger {
+                        left: 0 !important;
+                    }
+
+                    &:before {
+                    }
+                }
+            }
+        }
+    }
+}

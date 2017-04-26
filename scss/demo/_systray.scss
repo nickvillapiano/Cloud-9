@@ -1,0 +1,56 @@
+// _systray.scss
+
+.systray {
+    position: absolute;
+    bottom: 15rem;
+    left: 4rem;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s, z-index 0.3s;
+
+    .windows-desktop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 33.8rem;
+
+        .systray-icon {
+            position: absolute;
+            top: 1.4rem;
+            left: 8.3rem;
+            width: 6.5%;
+        }
+    }
+
+    .systray-icons {
+        position: relative;
+        top: -5rem;
+        display: none;
+    }
+
+    .systray-icons-small {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        width: 40rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        img {
+            height: 2.3rem;
+            transition: height 0.3s;
+
+            &.large {
+                height: 4.6rem;
+            }
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        z-index: 1;
+    }
+}

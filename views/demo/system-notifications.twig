@@ -1,0 +1,47 @@
+<!-- System Notifications -->
+
+<section class="system-notifications">
+
+    {% include 'demo/system-notification-micro.twig' with
+        {
+            'class' : 'call',
+            is_call : true
+        }
+    %}
+
+    {% include 'demo/system-notification-micro.twig' with
+        {
+            'class' : 'quickcall',
+            is_quickcall : true
+        }
+    %}
+
+    {% include 'demo/system-notification-micro.twig' with
+        {
+            'class' : 'phone-call',
+            is_phonecall : true
+        }
+    %}
+
+    {% include 'demo/system-notification-micro.twig' with
+        {
+            'class' : 'text',
+            is_text : true
+        }
+    %}
+
+    {% include 'demo/system-notification-micro.twig' with
+        {
+            'class' : 'group',
+            is_group : true
+        }
+    %}
+
+    {% include 'demo/system-notification-micro.twig' with
+        {
+            'class' : 'disconnected',
+            is_disconnected : true
+        }
+    %}
+
+</section>

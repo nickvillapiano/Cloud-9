@@ -1,0 +1,530 @@
+// _chat-area.scss
+
+.chat-area {
+    background: $almost-black;
+    width: 32.3rem;
+    min-height: 40rem;
+    position: absolute;
+    top: 2rem;
+    left: calc(50% + 20.2rem);
+    transform: translateX(-50%) translateX(15rem);
+    //
+    min-height: 37rem;
+    width: 32.5rem;
+    left: calc(50% + 22rem);
+    overflow: hidden;
+
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.25s;
+
+    &.show {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0.2rem;
+        background: $black;
+        z-index: 6;
+    }
+
+    .tab-bar {
+        height: 4rem;
+        background: $black;
+        position: relative;
+        //
+        border-bottom: 0.2rem solid $active-grey-1;
+        transition: border 0.1s;
+        //
+        overflow: hidden;
+
+        @import 'tab-dropdown';
+
+        .tab-container {
+            position: relative;
+            overflow: auto;
+            z-index: 5;
+            margin: 0.2rem 0 0 0;
+
+            @import 'chat-tab';
+        }
+
+        .tab-controls {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            margin: 0.1rem 0 0 0;
+            //
+            right: 0.7rem;
+            z-index: 8;
+
+            .close-control {
+
+                svg {
+                    width: 1rem;
+
+                    .st0 {
+                        fill: none;
+                        stroke: $white;
+                        stroke-width: 30;
+                        stroke-miterlimit: 10;
+                        transition: all 0.3s;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    svg {
+
+                        .st0 {
+                            stroke: $select-green;
+                        }
+                    }
+                }
+            }
+
+            .tab-manager {
+                margin: 0.4rem 0 0 0;
+
+                @extend .close-control;
+
+                svg {
+
+                    .st0 {
+                        fill: $white;
+                        stroke-width: 1;
+                    }
+                }
+
+                &:hover {
+
+                    svg {
+
+                        .st0 {
+                            fill: $select-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .voice-bar {
+        height: 3.6rem;
+        background: $active-grey-2;
+        position: relative;
+        transition: background 0.1s;
+        //
+        display: none;
+
+        svg {
+            width: 2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            transition: transform 0.3s;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .st0 {
+                stroke: $white;
+                transition: all 0.3s;
+            }
+
+            .st1 {
+                display: none;
+            }
+        }
+    }
+
+    .conversation-area {
+        font-size: 1rem;
+        padding: 0 1rem 1rem 1rem;
+
+        @import 'conversation-line-item';
+
+        .dateline {
+            position: relative;
+            margin: 1.5rem 0 3.8rem 0;
+
+            .hr {
+                width: 100%;
+                height: 0.1rem;
+                background: $grey;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                margin: 0.5rem 0 0 0;
+            }
+
+            .day {
+                text-transform: uppercase;
+                color: $dark-beige;
+                position: relative;
+                z-index: 2;
+                background: $almost-black;
+                float: right;
+                padding: 0 0 0 1rem;
+                //
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0 1rem;
+            }
+        }
+    }
+
+    .input-area {
+        height: 3rem;
+        width: 100%;
+        padding: 1rem 1rem 4.5rem;
+        margin: -1rem 0 0 0;
+        border-top: 0.2rem solid $grey;
+        //
+        padding: 1rem 1rem 4.2rem;
+        margin: 0.7rem 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        input {
+            border: 0.1rem solid $grey;
+            background: transparent;
+            width: calc(100% - 3rem);
+            height: 3rem;
+            font-size: 1.3rem;
+            padding: 0 1rem;
+            letter-spacing: 0;
+            //
+            border: 0.1rem solid $active-grey-1;
+            transition: border 0.3s;
+
+            &:focus {
+                outline: none;
+                border: 0.1rem solid $medium-grey;
+            }
+        }
+
+        .bizmoji-trigger {
+            position: absolute;
+            top: 50%;
+            right: 4.6rem;
+            transform: translateY(-50%);
+            z-index: 2;
+
+            &:hover {
+                cursor: pointer;
+
+                svg {
+
+                    .st0 {
+                        stroke: $select-green;
+                    }
+
+                    .st1 {
+                        fill: $select-green;
+                    }
+                }
+            }
+
+            svg {
+                width: 1.6rem;
+
+                .st0 {
+                    fill: none;
+                    stroke: $normal-grey-2;
+                    stroke-width: 4;
+                    stroke-linecap: round;
+                    stroke-miterlimit: 10;
+                    transition: all 0.3s;
+                }
+
+                .st1 {
+                    fill: $normal-grey-2;
+                    stroke: $normal-grey-2;
+                    transition: all 0.3s;
+                }
+            }
+
+            &.active {
+
+                svg {
+
+                    .st0 {
+                        stroke: $white;
+                    }
+
+                    .st1 {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+
+        .bizmoji-window {
+            position: absolute;
+            top: 0;
+            right: 4rem;
+            width: 18.6rem;
+            opacity: 0;
+            z-index: -1;
+            transition: all 0.3s;
+
+            &.show {
+                opacity: 1;
+                z-index: 1;
+                transform: translateY(-3.5rem);
+            }
+
+            img {
+
+            }
+        }
+
+        .quick-reply-trigger {
+            width: 3rem;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            svg {
+                width: 2rem;
+                transform-origin: 44% 54%;
+                transition: all 0.3s;
+
+                .st0 {
+                    stroke: $white;
+                    transition: all 0.3s;
+                }
+
+                .st1 {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                svg {
+
+                    .st0 {
+                        stroke: $select-green;
+                    }
+                }
+            }
+        }
+    }
+
+    &.outgoing {
+
+        .tab-bar {
+            border-bottom: 0.2rem solid $hot-blue;
+
+            .tab-container {
+
+               .tab {
+
+                    &.active {
+                        background: $hot-blue;
+                    }
+               }
+            }
+        }
+
+        .voice-bar {
+            background: $hot-blue;
+
+            svg {
+                transform: translateX(-50%) translateY(-50%) rotate(135deg);
+
+                .st0 {
+                    stroke: none;
+                    fill: $red;
+                }
+
+                .st1 {
+                    display: none;
+                }
+            }
+        }
+
+        .input-area {
+
+            .quick-reply-trigger {
+
+                svg {
+                    transform: rotate(135deg);
+
+                    .st0 {
+                        stroke: $red;
+                        fill: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    &.incoming {
+
+        .tab-bar {
+            border-bottom: 0.2rem solid $purple;
+
+            .tab-container {
+
+               .tab {
+
+                    &.active {
+                        background: $purple;
+                    }
+               }
+            }
+        }
+
+        .voice-bar {
+            background: $purple;
+
+            svg {
+                transform: translateX(-50%) translateY(-50%);
+
+                .st0 {
+                    stroke: none;
+                    fill: $light-blue;
+                }
+
+                .st1 {
+                    display: none;
+                }
+            }
+        }
+
+        .input-area {
+
+            .quick-reply-trigger {
+
+                svg {
+
+                    .st0 {
+                        stroke: $light-blue;
+                        fill: $light-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    &.accepted {
+
+        .tab-bar {
+            border-bottom: 0.2rem solid $hot-blue;
+
+            .tab-container {
+
+               .tab {
+
+                    &.active {
+                        background: $hot-blue;
+                    }
+               }
+            }
+        }
+
+        .voice-bar {
+            background: $hot-blue;
+
+            svg {
+                transform: translateX(-50%) translateY(-50%) rotate(135deg);
+
+                .st0 {
+                    stroke: none;
+                    fill: $red;
+                }
+
+                .st1 {
+                    display: none;
+                }
+            }
+        }
+
+        .input-area {
+
+            .quick-reply-trigger {
+
+                svg {
+
+                    .st0 {
+                        stroke: $red;
+                        fill: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    &.tab-notification {
+
+        .tab-bar {
+
+            .tab {
+
+                &.control {
+                    background: $light-blue;
+                }
+            }
+
+            .tab-dropdown {
+
+                .active {
+                    color: $light-blue;
+                }
+            }
+        }
+    }
+
+    &.one-tab-state {
+
+        .tab-bar {
+
+            .tab-container {
+
+                .tab {
+                    display: none;
+
+                    &:nth-of-type(1) {
+                        display: block;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-window-fpo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.3s;
+
+        &.show {
+            opacity: 1;
+            z-index: 5;
+        }
+
+        img {
+
+        }
+    }
+}

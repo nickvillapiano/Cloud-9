@@ -1,0 +1,204 @@
+//_awesome-menu.scss
+
+.awesome-menu {
+    position: absolute;
+    bottom: 4.9rem;
+    left: 0;
+    min-height: 5rem;
+    transform: translateY(20rem);
+    z-index: 1;
+    background: $active-grey-1;
+    transition: all 0.3s;
+
+    &.expand {
+        transform: translateY(0);
+    }
+
+    .line-item {
+        position: relative;
+        padding: 1rem 5.3rem 1rem 1.5rem;
+        border-bottom: 0.1rem solid $black;
+
+        .name {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .icon {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-right: 1.6rem;
+
+            svg {
+                width: 2.2rem;
+
+                .st0 {
+
+                }
+
+                .st1 {
+
+                }
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: $select-green;
+
+            .name {
+                color: $black;
+            }
+
+            .icon {
+
+            }
+        }
+
+        &.call {
+
+            .icon {
+                margin-right: 1.7rem;
+
+                svg {
+                    width: 1.6rem;
+
+                    .st0 {
+
+                    }
+
+                    .st1 {
+                        display: none;
+                    }
+                }
+            }
+
+            &:hover {
+
+                .icon {
+
+                    svg {
+
+                        .st0 {
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.message {
+
+            .icon {
+                margin-right: 1.7rem;
+
+                svg {
+                    width: 1.6rem;
+
+                    .st0 {
+                        stroke-width: 1.5;
+                    }
+
+                    .st1 {
+
+                    }
+                }
+            }
+
+            &:hover {
+
+                .icon {
+
+                    svg {
+
+                        .st0 {
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.add-contact {
+
+            .icon {
+                margin-right: 1.3rem;
+
+                svg {
+                    width: 1.8rem;
+
+                    .st0 {
+
+                    }
+
+                    .st1 {
+                        fill: $white;
+                    }
+                }
+            }
+
+            &:hover {
+
+                .icon {
+
+                    svg {
+
+                        .st0 {
+                            stroke: $black;
+                            stroke: $black;
+                        }
+
+                        .st1 {
+                            fill: $black;
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.create-group {
+            border-bottom: 0.1rem solid transparent;
+
+            .icon {
+                margin-right: 0.8rem;
+
+                svg {
+                    width: 2.9rem;
+
+                    .st0 {
+
+                    }
+
+                    .st1 {
+                        fill: $white;
+                    }
+                }
+            }
+
+            &:hover {
+
+                .icon {
+
+                    svg {
+
+                        .st0 {
+                            stroke: $black;
+                        }
+
+                        .st1 {
+                            fill: $black;
+                            stroke: $black;
+                        }
+
+                        .st2 {
+                            stroke: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

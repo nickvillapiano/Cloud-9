@@ -1,0 +1,22 @@
+// _search-results.scss
+
+.search-results {
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    z-index: -1;
+    height: 88.6%;
+    overflow: scroll;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &.show {
+        opacity: 1;
+        z-index: 5;
+    }
+
+    img {
+
+    }
+}

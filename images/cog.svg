@@ -1,0 +1,22 @@
+<svg version="1.1" id="cog-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 75.7 75.1" style="enable-background:new 0 0 75.7 75.1;" xml:space="preserve">
+	<path class="st0" d="M37.9,8.7C21.9,8.7,9,21.6,9,37.6s12.9,28.9,28.9,28.9c16,0,28.9-12.9,28.9-28.9S53.9,8.7,37.9,8.7z M37.9,52.7
+		c-8.3,0-15.1-6.8-15.1-15.1s6.8-15.1,15.1-15.1S53,29.3,53,37.6S46.2,52.7,37.9,52.7z"/>
+	<polygon class="st1" points="16.6,47.6 3,43.6 3,31.6 16.6,27.6 "/>
+	<polygon class="st1" points="59.2,27.6 72.8,31.6 72.8,43.6 59.2,47.6 "/>
+	<g>
+		<polygon class="st2" points="16.6,47.6 3,43.6 3,31.6 16.6,27.6 	"/>
+		<polygon class="st2" points="59.2,27.6 72.8,31.6 72.8,43.6 59.2,47.6 	"/>
+	</g>
+	<g>
+		<polygon class="st2" points="47.9,58.9 43.9,72.5 31.9,72.5 27.9,58.9 	"/>
+		<polygon class="st2" points="27.9,16.3 31.9,2.7 43.9,2.7 47.9,16.3 	"/>
+	</g>
+	<g>
+		<polygon class="st2" points="29.9,59.8 17.5,66.5 9,58 15.7,45.6 	"/>
+		<polygon class="st2" points="45.9,15.5 58.3,8.7 66.8,17.2 60.1,29.6 	"/>
+	</g>
+	<g>
+		<polygon class="st2" points="60.1,45.6 66.8,58 58.3,66.5 45.9,59.8 	"/>
+		<polygon class="st2" points="15.7,29.6 9,17.2 17.5,8.7 29.9,15.5 	"/>
+	</g>
+</svg>

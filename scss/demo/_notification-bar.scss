@@ -1,0 +1,567 @@
+// _notification-bar.scss
+
+.notification-bar {
+  height: 3.4rem;
+  width: 100%;
+  overflow: hidden;
+  background: $standard-gradient;
+  border-top: 0.4rem solid $black;
+  //
+  border-top: 0.1rem solid black;
+  position: absolute;
+  bottom: 4.8rem;
+  z-index: 3;
+  transition: all 0.5s;
+  transform: translateY(5rem);
+  //
+  background: $light-blue;
+  //
+  background: transparent;
+
+  &.incoming-phone-call {
+    height: 5.3rem;
+
+    .macro {
+
+      &.notification {
+
+        .meta {
+
+          span {
+
+            &.contact-name {
+              // font-size: 1.6rem;
+            }
+          }
+        }
+      }
+
+      &.phone-call {
+        z-index: 3 !important;
+      }
+    }
+
+    .macro {
+
+      &.text {
+        display: none;
+      }
+    }
+  }
+
+  &.group-notification {
+
+    .macro {
+
+      &.notification {
+
+        &.group {
+          z-index: 5;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.contact-notification {
+
+    .macro {
+
+      &.notification {
+
+        &.new-contact {
+          z-index: 5;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .macro {
+
+    &.notification {
+      height: 3.4rem;
+      position: relative;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.3s;
+
+      & > div {
+        height: 3.4rem;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .quick-reply-trigger {
+        width: 2.5rem;
+        border-right: 0.1rem solid $black;
+        margin: 0 1rem 0 0;
+        position: relative;
+        z-index: 2;
+        //
+        visibility: hidden;
+        width: 0rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 0.6rem;
+          height: 0.6rem;
+          top: 50%;
+          right: -0.1rem;
+          transform: rotate(45deg) translateY(-69%);
+          border-top: 0.1rem solid $black;
+          border-right: 0.1rem solid $black;
+          background: $grey;
+          //
+          background: $light-blue;
+        }
+
+        svg {
+          width: 1rem;
+          position: relative;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+
+          .st0 {
+            fill: $light-blue;
+            //
+            fill: $white;
+          }
+        }
+      }
+
+      .quick-reply-drawer {
+        position: absolute;
+        z-index: 2;
+        width: 0;
+        height: 3.4rem;
+        top: 0;
+        left: 0;
+        background: $light-blue;
+        //
+        left: 2.3rem;
+        overflow: hidden;
+        transition: width 0.5s;
+
+        &.expand {
+          width: 100%;
+        }
+
+        .copy {
+          font-size: 1.4rem;
+          font-style: italic;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+
+          span {
+            text-decoration: underline;
+            position: absolute;
+            top: -0.9rem;
+            left: 0;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &:nth-of-type(1) {
+              left: 3.7rem;
+            }
+
+            &:nth-of-type(2) {
+              left: 11.7rem;
+            }
+
+            &:nth-of-type(3) {
+              left: 18.2rem;
+            }
+          }
+        }
+      }
+
+      .meta {
+
+        span {
+          margin-top: 1rem;
+
+          &.contact-name {
+            @include apercu-bold;
+            font-size: 1.2rem;
+            display: inline-block;
+          }
+
+          &.text-message {
+            font-size: 1rem;
+            font-style: italic;
+            color: $light-grey;
+            display: inline-block;
+            //
+            color: $white;
+          }
+        }
+      }
+
+      .chat-trigger {
+        float: right;
+        border-left: 0.1rem solid $black;
+        width: 5rem;
+        //
+        border-left: 0.1rem solid transparent;
+
+        svg {
+          width: 1.6rem;
+          position: relative;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+
+          &:hover {
+            cursor: pointer;
+
+            .st0 {
+              stroke: $select-green;
+            }
+          }
+
+          .st0 {
+            stroke: $white;
+            stroke-width: 1.5;
+            transition: all 0.3s;
+          }
+        }
+      }
+
+      &.text {
+        background: $light-blue;
+        top: -10.6rem;
+      }
+
+      &.phone {
+        background: $purple;
+        padding-left: 1.5rem;
+        height: 5.3rem;
+        padding-top: 1rem;
+
+        .meta {
+
+          .contact-name {
+            text-transform: uppercase;
+          }
+
+          .text-message {
+            font-style: normal;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: $light-grey;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 13rem;
+            position: relative;
+            top: 0.15rem;
+            //
+            max-width: 11rem;
+            left: 0.5rem;
+          }
+        }
+
+        .call-controls {
+          float: right;
+
+          .phone-icon {
+            width: 1.5rem;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &.accept {
+
+              .st0 {
+                fill: $light-blue;
+                stroke: $light-blue;
+                transition: all 0.3s;
+              }
+
+              &:hover {
+
+                .st0 {
+                  fill: $select-green;
+                  stroke: $select-green;
+                }
+              }
+            }
+
+            &.deny {
+              transform: rotate(135deg) translateY(-50%);
+              top: 0.5rem;
+              margin: 0 1rem;
+              //
+              margin: 0 2.2rem;
+
+              .st0 {
+                fill: $red;
+                stroke: $red;
+                transition: all 0.3s;
+              }
+
+              &:hover {
+
+                .st0 {
+                  fill: $select-green;
+                  stroke: $select-green;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.phone-call {
+        background: $purple;
+        padding-left: 1.5rem;
+        height: 5.3rem;
+        padding-top: 1rem;
+        top: -5.3rem;
+        z-index: -1;
+
+        .meta {
+
+          .contact-name {
+            text-transform: uppercase;
+          }
+
+          .text-message {
+            font-style: normal;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: $light-grey;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 13rem;
+            position: relative;
+            top: 0.15rem;
+            //
+            max-width: 11rem;
+            left: 0.5rem;
+          }
+        }
+
+        .call-controls {
+          float: right;
+          margin-right: 0.3rem;
+
+          .phone-icon {
+            width: 1.5rem;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &.accept {
+
+              .st0 {
+                fill: $light-blue;
+                stroke: $light-blue;
+                transition: all 0.3s;
+              }
+
+              &:hover {
+
+                .st0 {
+                  fill: $select-green;
+                  stroke: $select-green;
+                }
+              }
+            }
+
+            &.deny {
+              transform: rotate(135deg) translateY(-50%);
+              top: 0.5rem;
+              margin: 0 1rem;
+              //
+              margin: 0 2.2rem;
+
+              .st0 {
+                fill: $red;
+                stroke: $red;
+                transition: all 0.3s;
+              }
+
+              &:hover {
+
+                .st0 {
+                  fill: $select-green;
+                  stroke: $select-green;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.group {
+        background: $active-grey-1;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        opacity: 0;
+        padding-left: 1.5rem;
+
+        .meta {
+
+          .contact-name {
+            text-transform: uppercase;
+            @include apercu-regular;
+          }
+
+          .text-message {
+            font-style: normal;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            //
+            @include apercu-bold;
+          }
+        }
+
+        .call-controls {
+          display: none;
+        }
+      }
+
+      &.new-contact {
+        background: $active-grey-1;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        opacity: 0;
+        padding: 0 1.5rem;
+
+
+        .meta {
+          width: 100%;
+
+          .contact-name {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            float: left;
+          }
+
+          .text-message {
+            font-style: normal;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            float: right;
+            margin: 0.5rem 0 0 0;
+
+            img {
+              width: 2.4rem;
+              position: relative;
+              top: 0.2rem;
+            }
+
+            div {
+              display: inline-block;
+              margin: 0 0.5rem;
+            }
+
+            svg {
+              width: 0.8rem;
+              position: relative;
+              top: 0.3rem;
+
+              .st0 {
+                fill: $white;
+                stroke: none;
+              }
+            }
+          }
+        }
+
+        .call-controls {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.show-notification {
+    transform: translateY(0);
+  }
+
+  &.show-text-notification {
+
+    .macro {
+
+      &.notification {
+
+        &.text {
+          z-index: 1;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.incoming-call {
+    height: 5.3rem;
+
+    .macro {
+
+      &.phone {
+        z-index: 1;
+        opacity: 1;
+      }
+
+      &.notification {
+
+        .meta {
+
+          span {
+
+            &.contact-name {
+              // font-size: 1.6rem;
+            }
+          }
+        }
+      }
+
+      &.text {
+        z-index: -1;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.incoming-phone-call {
+
+    .macro {
+
+      &.notification {
+
+        &.phone-call {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+

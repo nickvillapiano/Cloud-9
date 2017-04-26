@@ -1,0 +1,275 @@
+{% set args = { 'title': "#{ title }", 'body_class': "#{ body_class }" } %}
+
+{% include "components/header.twig" with args %}
+
+<header class="header">
+    {% if is_landingPage %}
+        <div class="col one">
+            Project "Elliot"
+        </div>
+        <div class="col two">
+            &nbsp;
+        </div>
+        <div class="col three">
+            April 22, 2016
+        </div>
+    {% else %}
+        <div class="col one">
+            Project "Elliot"
+        </div>
+        <div class="col two">
+            Stylesheet
+        </div>
+        <div class="col three">
+            February 16, 2016
+        </div>
+    {% endif %}
+</header>
+
+{% if is_landingPage %}
+    <nav>
+        <div class="heading">
+            Prototypes
+        </div>
+        <div class="nav-macro">
+            <a href="phase1" class="nav-micro">
+                <div class="content-wrapper">
+                    <div class="title">
+                        Phase
+                    </div>
+                    <div class="number">
+                        1
+                    </div>
+                    <div class="description">
+                        Voice Chat Only
+                    </div>
+                </div>
+            </a>
+            <a href="phase2" class="nav-micro">
+                <div class="content-wrapper">
+                    <div class="title">
+                        Phase
+                    </div>
+                    <div class="number">
+                        2
+                    </div>
+                    <div class="description">
+                        Voice Chat with PBX
+                    </div>
+                </div>
+            </a>
+            <a href="phase3" class="nav-micro">
+                <div class="content-wrapper">
+                    <div class="title">
+                        Phase
+                    </div>
+                    <div class="number">
+                        3
+                    </div>
+                    <div class="description">
+                        Voice Chat, PBX, and Instant Messaging
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+{% endif %}
+
+<section class="typography">
+    <div class="heading">
+        Typography
+    </div>
+    <div class="font-title">
+        Apercu
+    </div>
+    <div class="alphanumerics">
+        abcdefghijklmnopqrstuvwxyz
+        <br>
+        1234567890 #@*!+<>
+    </div>
+    <div class="font-variations">
+        <div class="col one">
+            apercu bold
+        </div>
+        <div class="col two">
+            apercu bold italic
+        </div>
+        <div class="col three">
+            apercu regular
+        </div>
+        <div class="col four">
+            apercu regular italic
+        </div>
+    </div>
+</section>
+
+<section class="colors">
+    <div class="heading">
+        colors
+    </div>
+
+    <div class="colors-macro">
+        <div class="color-block">
+            <div class="block hot-blue">
+
+            </div>
+            <p class="hex">
+                #222DF2
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block light-blue">
+
+            </div>
+            <p class="hex">
+                #29aae1
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block cool-pink">
+
+            </div>
+            <p class="hex">
+                #ff7a8b
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block red">
+
+            </div>
+            <p class="hex">
+                #ff273e
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block green">
+
+            </div>
+            <p class="hex">
+                #12f488
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block select-green">
+
+            </div>
+            <p class="hex">
+                #29e1c1
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block purple">
+
+            </div>
+            <p class="hex">
+                #4c30f4
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block dark-purple">
+
+            </div>
+            <p class="hex">
+                #151c3d
+            </p>
+        </div>
+    </div>
+
+    <div class="grayscale-macro">
+        <div class="color-block">
+            <div class="block white">
+
+            </div>
+            <p class="hex">
+                #ffffff
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block light-grey">
+
+            </div>
+            <p class="hex">
+                #E8E8E8
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block medium-grey">
+
+            </div>
+            <p class="hex">
+                #929395
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block dark-beige">
+
+            </div>
+            <p class="hex">
+                #5D5D5B
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block active-grey-1">
+
+            </div>
+            <p class="hex">
+                #4F5563
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block active-grey-2">
+
+            </div>
+            <p class="hex">
+                #3E424B
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block normal-grey-1">
+
+            </div>
+            <p class="hex">
+                #33373E
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block grey">
+
+            </div>
+            <p class="hex">
+                #2D3037
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block dark-grey">
+
+            </div>
+            <p class="hex">
+                #151A20
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block almost-black">
+
+            </div>
+            <p class="hex">
+                #151516
+            </p>
+        </div>
+        <div class="color-block">
+            <div class="block black">
+
+            </div>
+            <p class="hex">
+                #050609
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <img src="images/hcs-logo.svg" alt="Hard Candy Shell logo">
+</footer>
+
+
+{% include "components/footer.twig" %}

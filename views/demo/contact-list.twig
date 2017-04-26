@@ -1,0 +1,254 @@
+
+<!-- Contact List -->
+
+<section class="contact-list">
+
+	<ul id="contact-list-ul" class="show">
+
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li shoutable',
+                'contact_name' : 'Minerva Jones',
+                'company_name' : 'Shadrack & Duxbury'
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li contact-tile ringable',
+                'contact_name' : 'Anne Wright',
+                'company_name' : 'Lehman Marcus',
+                'is_ringPermission' : true
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li unavailable',
+                'contact_name' : 'Benjamin Pantier',
+                'company_name' : 'Brand Corporation'
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li contact-tile-wrapped busy-person notification-example',
+                'contact_name' : 'Thomas Rhodes',
+                'company_name' : 'Choam'
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li group-tile',
+                'contact_name' : 'Research Team',
+                'company_name' : '6 members'
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li busy-person',
+                'contact_name' : 'Rita Herrera',
+                'company_name' : 'Omni Consumer Products',
+                'is_ringPermission' : true,
+                'is_reorderState' : true
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li',
+                'contact_name' : 'Chuck, Willy, & Niles',
+                'company_name' : '3 members'
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li unavailable',
+                'contact_name' : 'Bradley Fletcher',
+                'company_name' : 'Stark Industries'
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li on-a-call',
+                'contact_name' : 'Claire Freeman',
+                'company_name' : 'Omni Consumer Products'
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li pbx',
+                'contact_name' : 'Harmon Whitney',
+                'company_name' : '212-123-4567 • Wayne Enterprises',
+                'is_phonecall' : true
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li unavailable',
+                'contact_name' : 'Kinsey Keene',
+                'company_name' : 'Stark Industries',
+                'is_ringPermission' : true
+            }
+        %}
+        {% include 'demo/contact-tile-wrapped.twig' with
+            {
+                'class' : 'contact-list-li unavailable',
+                'contact_name' : 'Judge Somers',
+                'company_name' : 'Weyland-Yutani Corporation'
+            }
+        %}
+
+	</ul>
+
+    <ul id ="call-history">
+
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'missed unread phone',
+                'contact_name' : 'Anne Wright',
+                'company_name' : 'Lehman Marcus',
+                'timestamp' : '4 secs ago',
+                'communication_status' : 'available shout',
+                'is_missed' : true
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'outgoing unread phone-chat-add',
+                'contact_name' : 'Bill Rodriguez',
+                'company_name' : 'Quench Gym',
+                'timestamp' : '15 mins ago',
+                'communication_status' : 'available call',
+                'is_outgoing' : true
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'incoming unread phone-chat',
+                'contact_name' : 'Melvin Hart',
+                'company_name' : 'Desperado Miliners',
+                'timestamp' : '11:35 AM',
+                'communication_status' : 'unavailable call',
+                'is_incoming' : true
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'incoming unread phone-add',
+                'contact_name' : 'Sally Merver',
+                'company_name' : 'Master Accountant',
+                'timestamp' : 'Monday',
+                'communication_status' : 'available shout',
+                'is_incoming' : true
+
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'conversation unread',
+                'contact_name' : "Eva O'Malley",
+                'company_name' : 'Brooks Industries',
+                'timestamp' : 'Monday',
+                'communication_status' : 'unavailable call',
+                'is_conversation' : true,
+                'conversation_count' : '(12)'
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'outgoing',
+                'contact_name' : "Commodities Team",
+                'company_name' : 'Quench Gym',
+                'timestamp' : 'Tuesday',
+                'communication_status' : 'unavailable call',
+                'is_outgoing' : true,
+                'conversation_count' : ''
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'incoming',
+                'contact_name' : "Rick, Amy, & Spencer",
+                'company_name' : 'Desperado Miliners',
+                'timestamp' : 'Tuesday',
+                'communication_status' : 'available shout',
+                'is_incoming' : true,
+                'conversation_count' : ''
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'missed',
+                'contact_name' : "Curvin Derbyshire",
+                'company_name' : 'Brooks Industries',
+                'timestamp' : 'Tuesday',
+                'communication_status' : 'unavailable shout',
+                'is_missed' : true,
+                'conversation_count' : ''
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'outgoing',
+                'contact_name' : "Stuart Hatwearer",
+                'company_name' : 'Desperado Miliners',
+                'timestamp' : 'Wednesday',
+                'communication_status' : 'unavailable shout',
+                'is_outgoing' : true,
+                'conversation_count' : ''
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'conversation',
+                'contact_name' : "Delli Grover",
+                'company_name' : 'Lehman Marcus',
+                'timestamp' : 'Wednesday',
+                'communication_status' : 'available call',
+                'is_conversation' : true,
+                'conversation_count' : '(5)'
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'outgoing',
+                'contact_name' : "Commodities Team",
+                'company_name' : 'Quench',
+                'timestamp' : 'Wednesday',
+                'communication_status' : 'available call',
+                'is_outgoing' : true,
+                'conversation_count' : ''
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'incoming',
+                'contact_name' : "Rick, Amy, & Spencer",
+                'company_name' : 'Desperado Miliners',
+                'timestamp' : 'Thursday',
+                'communication_status' : 'available call',
+                'is_incoming' : true,
+                'conversation_count' : ''
+            }
+        %}
+        {% include 'demo/call-history-individual.twig' with
+            {
+                'class' : 'missed',
+                'contact_name' : "Curvin Derbyshire",
+                'company_name' : 'Brooks Industries',
+                'timestamp' : 'Thursday',
+                'communication_status' : 'available call',
+                'is_missed' : true,
+                'conversation_count' : ''
+            }
+        %}
+
+    </ul>
+
+</section>
+
+<div class="reorder-save">
+    <div class="button save">
+        Save
+    </div>
+    <div class="button cancel">
+        Cancel
+    </div>
+</div>

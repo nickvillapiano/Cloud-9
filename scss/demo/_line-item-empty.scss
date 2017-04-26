@@ -1,0 +1,34 @@
+// _line-item-empty.scss
+
+.line-item {
+
+    &.large {
+
+        &.empty {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            // background: url('../images/flatline.svg') center center no-repeat $almost-black;
+            background: url('../images/empty-FPO.png') center center no-repeat;
+            background-size: cover;
+
+            .logo {
+                color: $black;
+                font-size: 4rem;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                text-align: center;
+
+                img {
+                    height: 4.5rem;
+                    margin: 0.5rem 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+

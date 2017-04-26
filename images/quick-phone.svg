@@ -1,0 +1,17 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 85.6 88.4" style="enable-background:new 0 0 85.6 88.4;" xml:space="preserve">
+    <style type="text/css">
+    	.st0 {
+            stroke-width: 0.9904;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    	.st1 {
+            stroke-miterlimit: 10;
+        }
+    </style>
+    <polygon class="st1" points="83.5,20.3 76.4,20.3 80.2,1.5 61.6,22.8 70.7,22.8 65,41.7 "/>
+    <path class="st0" d="M9.3,9.1c-7.1,7.2-7.5,16.3-7.5,16.3c1.8,8.8,11.7,25,23.7,37c12,12,28.2,21.9,37,23.7c0,0,9.1-0.4,16.3-7.5
+	l0,0l4.2-4.2c0.6-0.6,0.6-1.5,0-2.1l-18-18c-0.6-0.6-1.5-0.6-2,0l-4.2,4.2l0,0l-4,4.9c0,0-7.6-1.6-18.2-12.3
+	C26,40.7,24.3,33.2,24.3,33.2l5-4l0,0l0.1-0.1h0l0,0l4.1-4.1c0.6-0.6,0.6-1.5,0-2l-18-18c-0.6-0.6-1.5-0.6-2,0L9.3,9.1L9.3,9.1z"/>
+</svg>

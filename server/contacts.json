@@ -1,0 +1,18 @@
+{
+  "contacts": [{
+    "name": "Jimmy Page",
+    "status": "available"
+  },
+  {
+    "name": "Robert Plant",
+    "status": "available"
+  },
+  {
+    "name": "John Paul Jones",
+    "status": "available"
+  },
+  {
+    "name": "John Bonham",
+    "status": "away"
+  }]
+}

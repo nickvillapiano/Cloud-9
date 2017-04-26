@@ -1,0 +1,400 @@
+// _style-guide.scss
+
+.style-guide {
+    background: $white;
+    color: $black;
+    @include apercu-regular;
+    text-transform: uppercase;
+    padding: 4rem;
+    letter-spacing: 1px;
+
+    header, section, footer {
+        width: 100%;
+        max-width: 128rem;
+        margin: 0 auto;
+    }
+
+    header {
+        width: 100%;
+        position: relative;
+        color: $dark-beige;
+        font-size: 1rem;
+        @include apercu-bold;
+
+        .col {
+            width: calc(100% / 3);
+            float: left;
+
+            &.one {
+                text-align: left;
+            }
+
+            &.two {
+                text-align: center;
+            }
+
+            &.three {
+                text-align: right;
+            }
+        }
+    }
+
+    section {
+        padding: 0 0 4rem;
+        border-bottom: 0.1rem solid $medium-grey;
+
+        .heading {
+            color: $dark-beige;
+            font-size: 1.6rem;
+            @include apercu-bold;
+        }
+
+        &.typography {
+            color: $normal-grey-2;
+            text-align: center;
+            padding: 8rem 0 4rem;
+
+            .font-title {
+                font-size: 5rem;
+                margin: 4rem 0 2rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+            }
+
+            .alphanumerics {
+                font-size: 2rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+                line-height: 1.4;
+            }
+
+            .font-variations {
+                font-size: 1.4rem;
+                overflow: auto;
+                width: 100%;
+                max-width: 90rem;
+                margin: 4rem auto 0;
+
+                .col {
+                    float: left;
+                    width: 25%;
+                    text-align: center;
+
+                    &.one {
+                        @include apercu-bold;
+                    }
+
+                    &.two {
+                        @include apercu-bold;
+                        font-style: italic;
+                    }
+
+                    &.three {
+
+                    }
+
+                    &.four {
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        &.colors {
+            text-align: center;
+
+            .heading {
+                margin: 5rem 0 3rem;
+            }
+
+            .colors-macro {
+                width: 100%;
+                padding: 0 0 4rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: flex-start;
+
+                .color-block {
+                    width: calc( 100% / 8);
+                    height: 10rem;
+                    background: $white;
+                    padding: 0 1rem 0;
+
+                    .block {
+                        background: blue;
+                        width: 100%;
+                        height: 10rem;
+
+                        &.hot-blue {
+                            background: $hot-blue;
+                        }
+
+                        &.light-blue {
+                            background: $light-blue;
+                        }
+
+                        &.cool-pink {
+                            background: $cool-pink;
+                        }
+
+                        &.red {
+                            background: $red;
+                        }
+
+                        &.select-green {
+                            background: $select-green;
+                        }
+
+                        &.green {
+                            background: $green;
+                        }
+
+                        &.purple {
+                            background: $purple;
+                        }
+
+                        &.dark-purple {
+                            background: $dark-purple;
+                        }
+                    }
+
+                    &:last-of-type {
+                        margin: 0;
+                    }
+
+                    .hex {
+                        color: $normal-grey-2;
+                        margin: 1rem 0 0;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .grayscale-macro {
+                width: 100%;
+                padding: 4rem 0.2rem 3rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: flex-start;
+
+                .color-block {
+                    width: calc( 100% / 11);
+                    height: 10rem;
+                    background: $white;
+                    padding: 0 0.5rem 0;
+
+                    .block {
+                        background: grey;
+                        width: 100%;
+                        height: 10rem;
+
+                        &.black {
+                            background: $black;
+                        }
+
+                        &.white {
+                            background: $white;
+                            outline: 0.1rem solid $light-grey;
+                        }
+
+                        &.grey {
+                            background: $grey;
+                        }
+
+                        &.light-grey {
+                            background: $light-grey;
+                        }
+
+                        &.medium-grey {
+                            background: $medium-grey;
+                        }
+
+                        &.dark-grey {
+                            background: $dark-grey;
+                        }
+
+                        &.almost-black {
+                            background: $almost-black;
+                        }
+
+                        &.purple {
+                            background: $purple;
+                        }
+
+                        &.dark-purple {
+                            background: $dark-purple;
+                        }
+
+                        &.dark-white {
+                            background: $dark-white;
+                        }
+
+                        &.dark-beige {
+                            background: $dark-beige;
+                        }
+
+                        &.active-grey-1 {
+                            background: $active-grey-1;
+                        }
+
+                        &.active-grey-2 {
+                            background: $active-grey-2;
+                        }
+
+                        &.normal-grey-1 {
+                            background: $normal-grey-1;
+                        }
+
+                        &.normal-grey-2 {
+                            background: $normal-grey-2;
+                        }
+
+                        &.normal-grey-middle {
+                            background: $normal-grey-middle;
+                        }
+
+                    }
+
+                    &:last-of-type {
+                        margin: 0;
+                    }
+
+                    .hex {
+                        color: $black;
+                        margin: 1rem 0 0;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        text-align: center;
+        margin: 4rem auto -4rem;
+
+        img {
+            width: 8rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .style-guide {
+
+        section {
+
+            &.colors {
+
+                .colors-macro {
+                    padding-bottom: 0.5rem;
+
+                    .color-block {
+                        width: calc( 100% / 3 );
+                        margin-bottom: 3.5rem;
+
+                        &:nth-of-type(3) {
+                        }
+                    }
+                }
+
+                .grayscale-macro {
+                    padding-bottom: 0.5rem;
+
+                    .color-block {
+                        width: calc( 100% / 6);
+                        padding: 0 1rem 0;
+                        margin-bottom: 3.5rem;
+
+                        &:nth-of-type(5) {
+                        }
+
+                        &:nth-of-type(6) {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .style-guide {
+
+        header {
+            font-size: 0.9rem;
+        }
+
+        section {
+
+            &.typography {
+                padding-bottom: 2rem;
+
+                .alphanumerics {
+                    font-size: 1.6rem;
+                }
+
+                .font-variations {
+
+                    .col {
+                        width: 50%;
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+
+            &.colors {
+
+                .colors-macro {
+
+                    .color-block {
+                        width: calc( 100% / 2 );
+                        margin-bottom: 3.5rem;
+                    }
+                }
+
+                .grayscale-macro {
+
+                    .color-block {
+                        width: calc( 100% / 3);
+                        padding: 0 1rem 0;
+                        margin-bottom: 0.5rem;
+
+                        .block {
+                            height: 7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .style-guide {
+
+        section {
+
+            &.typography {
+
+                .alphanumerics {
+                    font-size: 1.2rem;
+                }
+
+                .font-variations {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+@import "landing-page";

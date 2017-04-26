@@ -1,0 +1,243 @@
+// _style-guide.scss
+
+.style-guide-internal {
+    background: $white;
+    color: $black;
+    @include apercu-regular;
+
+    section {
+        padding-bottom: 4rem;
+    }
+
+    .title {
+        font-size: 4rem;
+        border-bottom: 0.2rem solid $black;
+        margin: 2rem auto 4rem;
+        padding: 0 0 2rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .macro {
+        padding: 0 2rem;
+    }
+
+    .colors {
+
+        .macro {
+            text-align: center;
+
+            .color-block {
+                display: inline-block;
+                text-align: center;
+                margin: 0 1rem 2rem;
+
+                p {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    @include apercu-bold;
+                    width: 90%;
+
+                    & + p {
+                        margin-top: 0.2rem;
+                        color: #000;
+                    }
+                }
+
+                &.white {
+
+                    p {
+                        text-shadow: 1px 1px 0px #000;
+
+                        & + p {
+                            text-shadow: none;
+                        }
+                    }
+                }
+
+                .block {
+                    width: 11rem;
+                    height: 11rem;
+                    margin: 2rem 0 0;
+
+                    &.black {
+                        background: $black;
+                    }
+
+                    &.white {
+                        background: $white;
+                        outline: 0.1rem solid #000;
+                    }
+
+                    &.hot-blue {
+                        background: $hot-blue;
+                    }
+
+                    &.light-blue {
+                        background: $light-blue;
+                    }
+
+                    &.cool-pink {
+                        background: $cool-pink;
+                    }
+
+                    &.red {
+                        background: $red;
+                    }
+
+                    &.select-green {
+                        background: $select-green;
+                    }
+
+                    &.green {
+                        background: $green;
+                    }
+
+                    &.grey {
+                        background: $grey;
+                    }
+
+                    &.light-grey {
+                        background: $light-grey;
+                    }
+
+                    &.medium-grey {
+                        background: $medium-grey;
+                    }
+
+                    &.dark-grey {
+                        background: $dark-grey;
+                    }
+
+                    &.almost-black {
+                        background: $almost-black;
+                    }
+
+                    &.purple {
+                        background: $purple;
+                    }
+
+                    &.dark-purple {
+                        background: $dark-purple;
+                    }
+
+                    &.dark-white {
+                        background: $dark-white;
+                    }
+
+                    &.dark-beige {
+                        background: $dark-beige;
+                    }
+
+                    &.active-grey-1 {
+                        background: $active-grey-1;
+                    }
+
+                    &.active-grey-2 {
+                        background: $active-grey-2;
+                    }
+
+                    &.normal-grey-1 {
+                        background: $normal-grey-1;
+                    }
+
+                    &.normal-grey-2 {
+                        background: $normal-grey-2;
+                    }
+
+                    &.normal-grey-middle {
+                        background: $normal-grey-middle;
+                    }
+                }
+
+                &.black {
+                    color: $black;
+                }
+
+                &.white {
+                    color: $white;
+                }
+
+                &.hot-blue {
+                    color: $hot-blue;
+                }
+
+                &.light-blue {
+                    color: $light-blue;
+                }
+
+                &.cool-pink {
+                    color: $cool-pink;
+                }
+
+                &.red {
+                    color: $red;
+                }
+
+                &.select-green {
+                    color: $select-green;
+                }
+
+                &.green {
+                    color: $green;
+                }
+
+                &.grey {
+                    color: $grey;
+                }
+
+                &.light-grey {
+                    color: $light-grey;
+                }
+
+                &.medium-grey {
+                    color: $medium-grey;
+                }
+
+                &.dark-grey {
+                    color: $dark-grey;
+                }
+
+                &.almost-black {
+                    color: $almost-black;
+                }
+
+                &.purple {
+                    color: $purple;
+                }
+
+                &.dark-purple {
+                    color: $dark-purple;
+                }
+
+                &.dark-white {
+                    color: $dark-white;
+                }
+
+                &.dark-beige {
+                    color: $dark-beige;
+                }
+
+                &.active-grey-1 {
+                    color: $active-grey-1;
+                }
+
+                &.active-grey-2 {
+                    color: $active-grey-2;
+                }
+
+                &.normal-grey-1 {
+                    color: $normal-grey-1;
+                }
+
+                &.normal-grey-2 {
+                    color: $normal-grey-2;
+                }
+
+                &.normal-grey-middle {
+                    color: $normal-grey-middle;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 98.3 90.9" style="enable-background:new 0 0 98.3 90.9;" xml:space="preserve">
+    <style type="text/css">
+    	.st0 {
+            fill: none;
+            stroke: #000000;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    	.st1 {
+            stroke: #000000;
+            stroke-width: 1.1159;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    </style>
+    <path class="st0" d="M44.8,52.2c-1-0.3-2.1-0.8-3.2-1.3c6.6-2.7,11.3-9.2,11.3-16.7V23.1c0-9.9-9.4-19.8-20.7-19.8
+    	c-11.3,0-20.7,9.9-20.7,19.8v11.1c0,7.6,4.8,14.2,11.5,16.8c-1.1,0.5-2.2,1-3.4,1.3C12.6,53.9,3,59.6,3,68.7v19h58.3v-19
+    	C61.3,59.6,50.3,53.7,44.8,52.2z"/>
+    <path class="st1" d="M59.8,48.4c0,1.2,0.6,2.2,1.5,2.9l19,13.3c1.6,1.1,3.8,0.7,4.9-0.9c1.1-1.6,0.7-3.8-0.9-4.9L74.6,52l18.5,0
+    	c2,0,3.5-1.6,3.5-3.5c0-1-0.4-1.9-1-2.5s-1.5-1-2.5-1l-18.5,0l9.8-6.8c1.6-1.1,2-3.3,0.9-4.9c-0.1-0.2-0.3-0.3-0.4-0.5
+    	c-1.2-1.2-3.1-1.4-4.5-0.4l-19,13.3C60.4,46.2,59.8,47.3,59.8,48.4z"/>
+</svg>

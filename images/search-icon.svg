@@ -1,0 +1,22 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55.6 55.4" style="enable-background:new 0 0 55.6 55.4;" xml:space="preserve">
+    <style type="text/css">
+    	.st0 {
+            fill: none;
+            stroke: #231F20;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    	.st1 {
+            fill: none;
+            stroke: #231F20;
+            stroke-width: 5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    </style>
+    <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -8.813 21.607)" class="st0" cx="21.7" cy="21.4" rx="19.2" ry="19.2"/>
+    <line class="st1" x1="36.2" y1="36" x2="52.8" y2="52.6"/>
+</svg>

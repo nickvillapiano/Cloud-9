@@ -1,0 +1,184 @@
+// _context-menu.scss
+
+.context-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: $active-grey-1;
+    width: auto;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s;
+
+    &.show {
+        opacity: 1;
+        z-index: 6;
+    }
+
+    .main-panel {
+        text-transform: uppercase;
+        width: 22rem;
+        padding: 0.5rem;
+
+        .line-item {
+            padding: 1rem 0.5rem;
+
+            img {
+                width: 2.4rem;
+                position: relative;
+                top: 0.1rem;
+            }
+
+            .title {
+                font-size: 1.2rem;
+                display: inline-block;
+
+                span {
+
+                    &.contact-text {
+                        display: inline;
+                    }
+
+                    &.group-text {
+                        display: inline;
+                    }
+                }
+            }
+
+            .icon {
+                display: inline-block;
+                float: right;
+                position: relative;
+                top: -0.1rem;
+
+                svg {
+                    width: 0.9rem;
+
+                    .st0 {
+                        fill: $white;
+                        stroke: none;
+                    }
+                }
+            }
+
+            &.switch {
+
+                .title {
+                    margin: 0 0 0 0.8rem;
+                }
+
+                &:hover {
+                    background: $active-grey-1;
+                    color: $white;
+
+                    .icon {
+
+                        svg {
+
+                            .st0 {
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.flyout-trigger {
+
+                .icon {
+                    top: 0.2rem;
+
+                    svg {
+                        display: block;
+                        width: 0.9rem;
+                        transform: rotate(90deg);
+
+                        .st0 {
+
+                        }
+                    }
+                }
+            }
+
+            &.edit-group {
+                display: none;
+            }
+
+            &:hover {
+                background: $select-green;
+                color: $black;
+                cursor: pointer;
+
+                .icon {
+
+                    svg {
+
+                        .st0 {
+                            fill: $black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .separator {
+            width: 100%;
+            height: 0.1rem;
+            background: $normal-grey-2;
+            margin: 0.5rem 0;
+        }
+
+        .flyout {
+            position: absolute;
+            background: $active-grey-1;
+            top: 8rem;
+            left: 22.2rem;
+            width: 15rem;
+            padding: 0.5rem;
+            opacity: 0;
+            z-index: -1;
+            transform: translateX(-20%);
+            transition: all 0.3s;
+
+            .line-item {
+                font-size: 1.2rem;
+                padding: 1rem 0.5rem;
+            }
+
+            &.slide-out {
+                transform: translateX(0);
+                opacity: 1;
+                z-index: 1;
+                transition-delay: 0.1s;
+            }
+        }
+    }
+
+    &.group-menu {
+
+        .main-panel {
+
+            .line-item {
+
+                &.edit-group {
+                    display: block;
+                }
+                &.flyout-trigger {
+                    display: none;
+                }
+
+                .title {
+
+                    .contact-text {
+                        display: none;
+                    }
+
+                    .group-text {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}

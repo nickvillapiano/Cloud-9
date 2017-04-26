@@ -1,0 +1,28 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+    <style type="text/css">
+    	.st0 {
+            fill: none;
+            stroke: #FFFFFF;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    	.st1 {
+            stroke: #FFFFFF;
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+        }
+    </style>
+    <g id="Layer_1">
+    	<path class="st0" d="M15.6,12.8C8.5,20,8.1,29.2,8.1,29.2c1.8,8.8,11.7,25,23.7,37c12,12,28.2,21.9,37,23.7c0,0,9.1-0.4,16.3-7.5
+    		l0,0l4.2-4.2c0.6-0.6,0.6-1.5,0-2.1l-18-18c-0.6-0.6-1.5-0.6-2,0l-4.2,4.2l0,0l-4,4.9c0,0-7.6-1.6-18.2-12.3
+    		C32.3,44.4,30.7,36.8,30.7,36.8l5-4l0,0l0.1-0.1h0l0,0l4.1-4.1c0.6-0.6,0.6-1.5,0-2l-18-18c-0.6-0.6-1.5-0.6-2,0L15.6,12.8
+    		L15.6,12.8z"/>
+    </g>
+    <g id="Layer_3">
+    	<line class="st1" x1="63" y1="35.6" x2="84.1" y2="14.5"/>
+    	<line class="st1" x1="63" y1="14.5" x2="84.1" y2="35.6"/>
+    </g>
+</svg>

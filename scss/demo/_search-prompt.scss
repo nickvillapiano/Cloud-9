@@ -1,0 +1,27 @@
+//_search-prompt.scss
+
+.search-prompt {
+    position: absolute;
+    top: 50%;
+    left: 6.2rem;
+    z-index: 3;
+    transform: translateY(-50%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+
+    &.show {
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .name {
+        color: #ffffff;
+        background: #4f5563;
+        border-radius: 0.2rem;
+        display: inline-block;
+        padding: 0.4rem 0.5rem;
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
+}

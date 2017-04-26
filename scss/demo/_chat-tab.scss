@@ -1,0 +1,137 @@
+// _chat-tab.scss
+
+.tab {
+    position: relative;
+    width: 8rem;
+    height: 3.8rem;
+    float: left;
+    // border-bottom: 0.1rem solid $black;
+    border-right: 0.1rem solid $black;
+    background: $grey;
+    transition: background 0.1s, border-bottom 0.1s, width 0.3s, opacity 0.1s;
+    //
+    width: 8.2rem;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 1rem solid $black;
+        border-left: 1rem solid transparent;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .name {
+            color: $select-green;
+        }
+
+        .hover-close {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+    .name {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        @include apercu-bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        text-align: center;
+        margin: 0 0.5rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: color 0.3s;
+    }
+
+    .hover-close {
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translateY(-50%);
+        background: $black;
+        width: 1.6rem;
+        padding: 0.8rem 0.2rem;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.15s;
+
+        svg {
+            width: 0.7rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            .st0 {
+                fill: none;
+                stroke: $white;
+                stroke-width: 30;
+            }
+        }
+
+        &:hover {
+
+            svg {
+
+                .st0 {
+                    stroke: $select-green;
+                }
+            }
+        }
+    }
+
+    &.active {
+        background: $active-grey-1;
+        // border-bottom: 0.1rem solid $active-grey-1;
+    }
+
+    &.shrink {
+        width: 1rem;
+
+        .name {
+            opacity: 0;
+        }
+
+        &:hover {
+
+            .hover-close {
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+    }
+
+    &.control {
+        width: 3.6rem;
+
+        .name {
+            text-overflow: initial;
+        }
+
+        &.shrink {
+
+            .name {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+
+            .hover-close {
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+    }
+}

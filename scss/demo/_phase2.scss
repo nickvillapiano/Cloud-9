@@ -1,0 +1,92 @@
+// _phase2.scss
+
+&.phase2 {
+
+    .wrapper {
+
+        .contact-list {
+
+            #contact-list-ul {
+
+                li {
+
+                    &.reorder-state {
+
+                        &.pbx {
+
+                            .wrapped {
+
+                                .meta {
+
+                                    .text-button {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #call-history {
+
+            li {
+
+                &:nth-of-type(1) {
+
+                    .line-item {
+
+                        .meta {
+
+                            .company {
+                                position: relative;
+
+                                &:before {
+                                    content: '212-123-4567 •';
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // &:nth-of-type(4) {
+
+                //     .line-item {
+
+                //         .meta {
+
+                //             .name {
+                //                 position: relative;
+                //                 visibility: hidden;
+                //                 width: 17rem;
+                //                 white-space: nowrap;
+                //                 overflow: hidden;
+                //                 text-overflow: ellipsis;
+
+                //                 &:before {
+                //                     content: '212-123-4567';
+                //                     display: inline;
+                //                     visibility: visible;
+                //                 }
+                //             }
+
+                //             .company {
+                //                 position: relative;
+                //                 visibility: hidden;
+
+                //                 &:before {
+                //                     content: 'Houston, TX';
+                //                     display: inline;
+                //                     visibility: visible;
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
+            }
+        }
+    }
+
+}

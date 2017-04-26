@@ -1,0 +1,529 @@
+// _call-history.scss
+
+#call-history {
+    background: $black;
+    margin: 0;
+    //
+    transform: translateX(100%);
+    transition: all 0.3s;
+
+    &.show {
+        transform: translateX(0);
+    }
+
+    li {
+        width: 100%;
+        // height: 4.5rem;
+        border-top: 0.1rem solid $normal-grey-2;
+        position: relative;
+
+        .notification-notch {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4.7rem;
+            width: 0.5rem;
+            background: $light-blue;
+            border-right: 0.1rem solid $black;
+            transform: translateX(-0.6rem);
+            transition: transform 0.3s;
+        }
+
+        .line-item {
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            padding: 0.9rem 0;
+            transform: translateX(0);
+            transition: transform 0.3s;
+
+            .call-type-icon {
+                margin: 0 1rem;
+                position: relative;
+                top: 0.2rem;
+                transition: transform 0.3s;
+
+                svg {
+                    width: 2rem;
+
+                    .st0 {
+                        stroke: #fff;
+                    }
+
+                    .st1 {
+                        stroke: #fff;
+                    }
+
+                    .st2 {
+                        stroke: #fff;
+                    }
+                }
+            }
+
+            .meta {
+                flex-grow: 2;
+                transition: transform 0.3s;
+
+                .name {
+                    font-size: 1.4rem;
+
+                    .conversation-count {
+                        @include apercu-bold;
+                        font-size: 1rem;
+                    }
+                }
+
+                .company {
+                    font-size: 1rem;
+                    color: $dark-beige;
+                    transition: color 0.2s;
+                }
+            }
+
+            .time {
+                margin: 0 1.5rem 0 0;
+                font-size: 1rem;
+                text-align: right;
+                flex-grow: 1;
+                color: $light-grey;
+                transition: all 0.25s;
+            }
+        }
+
+        .panel-wrapper {
+            overflow: hidden;
+            height: 0rem;
+            border-top: 0.1rem solid $black;
+            transition: all 0.3s;
+
+            .controls {
+                overflow: auto;
+                padding: 0.5rem 0;
+                position: relative;
+                //
+                position: absolute;
+                right: 1.5rem;
+                top: -0.1rem;
+                padding: 1.2rem 0;
+                transform: translateX(100%);
+                opacity: 0;
+                transition: opacity 0.3s, transform 0.25s;
+
+                .call-button {
+                    width: 6rem;
+                    float: left;
+                    text-align: center;
+
+                    svg {
+                        // width: 2.2rem;
+                        height: 2rem;
+
+                        .st0 {
+                            stroke: #fff;
+                        }
+
+                        .st1 {
+                            stroke: none;
+                            fill: #fff;
+                        }
+                    }
+
+                    &.call {
+
+                        svg {
+
+                            .st0 {
+                                stroke: #fff;
+                            }
+
+                            .st1 {
+                                fill: none;
+                                stroke: none;
+                            }
+                        }
+
+                        &.unavailable {
+
+                            svg {
+
+                                .st0 {
+                                    stroke: $black;
+                                }
+
+                                .st1 {
+                                    fill: none;
+                                    stroke: none;
+                                }
+                            }
+                        }
+                    }
+
+                    &.unavailable {
+
+                        svg {
+
+                            .st0 {
+                                stroke: none;
+                                fill: $black
+                            }
+
+                            .st1 {
+                                fill: black;
+                                stroke: none;
+                            }
+                        }
+                    }
+                }
+
+                .separator {
+                    height: 100%;
+                    width: 0.1rem;
+                    background: $black;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    //
+                    display: none;
+                }
+
+                .text-button {
+                    width: 6rem;
+                    float: left;
+                    text-align: center;
+                    padding: 0.2rem 0 0 0;
+                    //
+                    border-left: 1px solid black;
+                    border-right: 1px solid black;
+                    height: 5rem;
+                    margin: -1.2rem 0 0 0;
+                    padding: 1.2rem 0 0 0;
+
+                    svg {
+                        // width: 2rem;
+                        height: 2rem;
+
+                        .st0 {
+                            stroke: #fff;
+                            stroke-width: 1;
+                        }
+                    }
+                }
+
+                .add-contact-button {
+                    width: 6rem;
+                    float: left;
+                    text-align: center;
+                    padding: 0.2rem 0 0 0;
+
+                    svg {
+                        height: 2rem;
+
+                        .st1 {
+                            fill: $white;
+                            stroke: transparent;
+                        }
+                    }
+                }
+            }
+
+            .conversation-summary {
+                background: $black;
+                text-transform: uppercase;
+                font-size: 1rem;
+                padding: 1rem;
+
+                .header {
+                    color: $dark-beige;
+                    margin: 0 0 0.6rem;
+                }
+
+                .macro {
+
+                    .micro {
+                        margin: 0 0 0.6rem 1rem;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .call-review {
+
+                        }
+
+                        .time-stamp {
+                            text-align: right;
+                            margin: 0 0.5rem 0 0;
+                        }
+                    }
+                }
+
+                .footer {
+                    color: $dark-beige;
+                }
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.open {
+            background: $standard-gradient;
+
+            .line-item {
+
+                .meta {
+
+                    .company {
+                        color: $white;
+                        width: 17rem;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+
+            .panel-wrapper {
+                height: 3.5rem;
+            }
+
+            // inline animation
+            .line-item {
+
+                .call-type-icon {
+                    transform: translateX(-3rem);
+                }
+
+                .meta {
+                    transform: translateX(-3rem);
+                }
+
+                .time {
+                    opacity: 0;
+                    transform: translateX(-100%);
+                }
+            }
+
+            .panel-wrapper {
+                height: 0;
+
+                .controls {
+                    position: absolute;
+                    right: 1.5rem;
+                    right: 0;
+                    top: -0.1rem;
+                    padding: 1.2rem 0;
+                    transform: translateX(0);
+                    opacity: 1;
+
+                    &.contract {
+                        transform: translateX(6.1rem);
+                    }
+                }
+            }
+
+        }
+
+        &.unread {
+
+            .line-item {
+
+                .time {
+                    font-size: 1.2rem;
+                    // @include apercu-bold;
+                    transition: all 0.3s, opacity 0.3s;
+                }
+            }
+        }
+
+        &.missed {
+
+            .line-item {
+
+                .call-type-icon {
+
+                    svg {
+
+                        .st1 {
+                            stroke: $red;
+                            stroke-width: 5;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.outgoing {
+
+            .line-item {
+
+                .call-type-icon {
+
+                    svg {
+
+                        .st1 {
+                            fill: #fff;
+                            stroke: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.incoming {
+
+            .line-item {
+
+                .call-type-icon {
+
+                    svg {
+
+                        .st1 {
+                            fill: #fff;
+                            stroke: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.conversation {
+
+            .line-item {
+
+                .call-type-icon {
+
+                    svg {
+
+                        .st1 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .panel-wrapper {
+
+            }
+
+            &.open {
+
+                .panel-wrapper {
+                    height: 13.2rem;
+                    //
+                    height: 10rem;
+                }
+            }
+        }
+
+        &.notification {
+
+            .notification-notch {
+                transform: translateX(0);
+            }
+
+            .line-item {
+                transform: translateX(0.5rem);
+
+                .time {
+                    color: $light-blue;
+                    @include apercu-bold;
+                }
+            }
+        }
+
+        // Different Controls Suite
+        &.phone {
+
+            .panel-wrapper {
+
+                .controls {
+
+                    .call-button {
+
+                        svg {
+
+                            .st1 {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .text-button {
+                        display: none;
+                    }
+
+                    .add-contact-button {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.phone-chat-add {
+
+        }
+
+        &.phone-chat {
+
+            .panel-wrapper {
+
+                .controls {
+
+                    .call-button {
+
+                        svg {
+
+                            .st0 {
+                                fill: transparent;
+                                stroke: $white !important;
+                            }
+                        }
+                    }
+
+                    .text-button {
+                        border-right: none;
+                        margin-right: 0.1rem;
+                    }
+
+                    .add-contact-button {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.phone-add {
+
+            .panel-wrapper {
+
+                .controls {
+
+                    .call-button {
+
+                        svg {
+
+                            .st1 {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .text-button {
+                        width: 0;
+                        overflow: hidden;
+                        border-left: none;
+                    }
+
+                    .add-contact-button {
+
+                    }
+                }
+            }
+        }
+    }
+
+    &.hide {
+        display: none;
+    }
+}
